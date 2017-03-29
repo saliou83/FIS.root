@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaloncosDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="MaloncosDBEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="Clients" EntityType="MaloncosDBModel.Clients" />
+    <EntitySet Name="Commands" EntityType="MaloncosDBModel.Commands" />
+    <EntitySet Name="Compte" EntityType="MaloncosDBModel.Compte" />
+    <EntitySet Name="Couleur" EntityType="MaloncosDBModel.Couleur" />
+    <EntitySet Name="Ligne_Command" EntityType="MaloncosDBModel.Ligne_Command" />
+    <EntitySet Name="Produits" EntityType="MaloncosDBModel.Produits" />
+    <EntitySet Name="Soins" EntityType="MaloncosDBModel.Soins" />
+    <EntitySet Name="Vetements" EntityType="MaloncosDBModel.Vetements" />
+  </EntityContainer>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id_Clients" />
+    </Key>
+    <Property Name="Id_Clients" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Nom_Client" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Prenom_Client" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Code_postal" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Genre" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email_Client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Commands">
+    <Key>
+      <PropertyRef Name="Id_Command" />
+    </Key>
+    <Property Name="Id_Command" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Date_Command" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+    <Property Name="Montant" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Compte">
+    <Key>
+      <PropertyRef Name="Id_Compte" />
+    </Key>
+    <Property Name="Id_Compte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Motdepasse" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Couleur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Couleur1" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Id_vetement" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Ligne_Command">
+    <Key>
+      <PropertyRef Name="Id_Ligne_Command" />
+    </Key>
+    <Property Name="Id_Ligne_Command" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Id_Command" Type="Int32" Nullable="false" />
+    <Property Name="Id_vetement" Type="Int32" Nullable="false" />
+    <Property Name="Montant" Type="Double" Nullable="false" />
+    <Property Name="Nombre_Article" Type="Int32" Nullable="false" />
+    <Property Name="Adresse_livraison" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Adresse_Facturation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Frais_Livraison" Type="Double" />
+  </EntityType>
+  <EntityType Name="Produits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Libelle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Categorie" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="prix" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Soins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Type_produit" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Prix_produit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Vetements">
+    <Key>
+      <PropertyRef Name="Id_vetement" />
+    </Key>
+    <Property Name="Id_vetement" Type="Int32" Nullable="false" />
+    <Property Name="Type_vetement" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Categorie" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Genre_vetement" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Reference_vetement" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Libelle_vetement" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Prix_vetement" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Couleur" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image3" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image4" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Prix_unit" Type="Int32" />
+  </EntityType>
+</Schema>

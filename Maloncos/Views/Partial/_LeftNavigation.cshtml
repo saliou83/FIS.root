@@ -1,0 +1,37 @@
+﻿@{
+    
+    var _db = new Maloncos.Models.MaloncosDBEntities();
+
+    List<Maloncos.Models.Couleur> mesCouleurs = _db.Couleur.ToList();
+}
+      
+                                                @Html.ActionLink("Collection", "Vetementfemme", "Home") <br />
+                                                @Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") <br />
+                                                @Html.ActionLink("Pull&Gilet", "Produitfemme", "Home")<br />
+                                                @Html.ActionLink("Pantalon", "Produitfemme", "Home")<br />
+                                                @Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")<br />
+                                                @Html.ActionLink("Jeans", "Produitfemme", "Home") <br />                                  
+                                                @Html.ActionLink("Chemises", "Produitfemme", "Home")<br />
+                                            
+<hr />
+
+
+                                               @Html.ActionLink("Chaussure", "Produitfemme", "Home")  <br />
+                                               @Html.ActionLink("Accessoires", "Produitfemme", "Home") <br />
+                                                                                       
+                                               @Html.ActionLink("Ceintures&Sacs", "Produitfemme", "Home")<br />
+                                               @Html.ActionLink("Portefeuilles&Montres", "Produitfemme", "Home")  <br />                                
+                                               @Html.ActionLink("Lunettes&Cravates", "Produitfemme", "Home") <br />
+
+
+<hr />
+ 
+                                               @Html.ActionLink("Lookbook", "Produitfemme", "Home")<br />
+                                               @Html.ActionLink("Les Matieres de la saison", "Produitfemme", "Home")<br />
+                                               @Html.ActionLink("Le guide des vestes", "Produitfemme", "Home")<br />
+                                                
+<hr />
+@foreach (var couleur in mesCouleurs)
+{
+    @Html.ActionLink(couleur.Couleur1, "Vetementfemme", "Home", new { couleur = couleur.Couleur1 }, null)<br />   
+}   

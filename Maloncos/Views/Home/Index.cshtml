@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Maloncos.Models.Produit>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="row">
+        @foreach (var parfum in Model)
+        {
+
+            string srcimg = "../../Content/photo/" + parfum.Image;
+            <div class="col-md-3">
+                <a href="@Url.Action("Details", new { id = parfum.Id })" class="thumbnail">
+                    <img src="@srcimg"  title="@parfum.Libelle" alt="@parfum.Libelle" style="width:5em; height:5em;" /><br />
+                </a><a href="Details"></a><span class="nom-produit">@parfum.Libelle </span>
+                <br />
+                <span class="prix-produit">@parfum.prix € </span>
+                <br />
+            </div>
+        }
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

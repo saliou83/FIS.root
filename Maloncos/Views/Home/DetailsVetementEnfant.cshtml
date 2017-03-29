@@ -1,0 +1,90 @@
+﻿@model Maloncos.Models.Vetements
+@{
+    ViewBag.Title = "DetailsVetementEnfant";
+}
+
+<div class="container">
+    <div class="row">
+        @{
+            string srcimg = "../../Content/images/" + Model.Image;
+            string srcimg1 = "../../Content/images/" + Model.Image1;
+            string srcimg2 = "../../Content/images/" + Model.Image2;
+            string srcimg3 = "../../Content/images/" + Model.Image3;
+            
+        }
+        <div class="col-md-2">
+            <a href="javascript:display_photo('@srcimg2','1160','828','Une légende')">
+                <img src="@srcimg2" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+                </a>
+            <a href="javascript:display_photo('@srcimg1','1160','828','Une légende')">
+                <img src="@srcimg1" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+                </a>
+            <a href="javascript:display_photo('@srcimg3','1160','828','Une légende')">
+                <img src="@srcimg3" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+                </a>
+</div>
+        <div class="col-md-4">
+            <img src="@srcimg"  title="@Model.Type_vetement" alt="@Model.Type_vetement" align="left" hspace="30"   style="width:20em; height:30em;" />
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <span>@Model.Type_vetement </span>
+                <br />
+                <p>
+                </p>
+            </div>
+            <div class="row">
+                <span class="hidden-sm" style="color: #BDBDBD">@Model.Reference_vetement </span>
+                <br />
+                <br />
+            </div>
+            <hr>
+            <div class="row">
+                <span class="prix-produit">@Model.Description </span>
+                <br />
+                <br />
+            </div>
+            <div class="row">
+                <span class="prix-produit">@Model.Categorie </span>
+                <br />
+            </div>
+            <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-5 input-group-sm">
+                    <select class="form-control form-sm">
+                        <option>3-6 mois(68cm)</option>
+                        <option>6-9 mois(74cm)</option>
+                        <option>9-12 mois(80cm)</option>
+                        <option>12-18 mois(86cm)</option>
+                        <option>18-24 mois(92cm)</option>
+                         <option>2-3 ans(98cm)</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <br />
+                    <label>
+                        <span style="text-decoration: underline">@Html.ActionLink("GUIDE DES TAILLES", "../../Content/images/guidetaille.jpg","Home")>
+                        </span>
+                        <br />
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" style="background-color: #333333">
+                        <span>AJOUTER AU PANIER </span>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                        Sign in</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

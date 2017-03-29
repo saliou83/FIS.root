@@ -1,0 +1,38 @@
+﻿@{
+    
+    var _db = new Maloncos.Models.MaloncosDBEntities();
+
+    List<Maloncos.Models.Couleur> mesCouleurs = _db.Couleur.ToList();
+}
+
+
+                                                @Html.ActionLink("Collection", "VetementHomme", "Home") <br />
+                                                @Html.ActionLink("Vestes&Manteaux", "VetementHomme", "Home") <br />
+                                                @Html.ActionLink("Pull&Gilet", "VetementHomme", "Home")<br />
+                                                @Html.ActionLink("Pantalon", "VetementHomme", "Home")<br />
+                                                @Html.ActionLink("T-shirts&sweats", "VetementHomme", "Home")<br />
+                                                @Html.ActionLink("Jeans", "VetementHomme", "Home")      <br />                             
+                                                @Html.ActionLink("Chemises", "VetementHomme", "Home")<br />
+                                                                                                                                                                                                  
+         <hr />                                
+                                                @Html.ActionLink("Chaussure", "VetementHomme", "Home")  <br /> 
+                                                @Html.ActionLink("Accessoires", "VetementHomme", "Home") <br />
+                                                                                       
+                                                @Html.ActionLink("Ceintures&Sacs", "VetementHomme", "Home")<br />
+                                                @Html.ActionLink("Portefeuilles&Montres", "VetementHomme", "Home")   <br />                               
+                                                @Html.ActionLink("Lunettes&Cravates", "VetementHomme", "Home")   <br />                         
+                                            
+                                                
+                 <hr />                              
+                                                @Html.ActionLink("Tendance&les basiques", "VetementHomme", "Home") <br />
+                                                @Html.ActionLink("Lookbook", "VetementHomme", "Home")
+                                                @Html.ActionLink("Les Matieres de la saison", "VetementHomme", "Home")<br />
+                                                @Html.ActionLink("Le guide des vestes", "VetementHomme", "Home")<br />
+                                                
+                <hr /> 
+                
+                @foreach (var couleur in mesCouleurs)
+{
+    @Html.ActionLink(couleur.Couleur1, "VetementHomme", "Home", new { couleur = couleur.Couleur1 }, null)<br />   
+}   
+                          

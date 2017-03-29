@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MaloncosDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id_Clients" />
+    </Key>
+    <Property Name="Id_Clients" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom_Client" Type="nvarchar(max)" />
+    <Property Name="Prenom_Client" Type="nvarchar(max)" />
+    <Property Name="Adresse" Type="nvarchar(max)" />
+    <Property Name="Code_postal" Type="nvarchar(max)" />
+    <Property Name="Genre" Type="nvarchar(max)" />
+    <Property Name="Email_Client" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Commands">
+    <Key>
+      <PropertyRef Name="Id_Command" />
+    </Key>
+    <Property Name="Id_Command" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Command" Type="date" Nullable="false" />
+    <Property Name="Id_Clients" Type="int" Nullable="false" />
+    <Property Name="Montant" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Compte">
+    <Key>
+      <PropertyRef Name="Id_Compte" />
+    </Key>
+    <Property Name="Id_Compte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Motdepasse" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id_Clients" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Couleur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Couleur" Type="nchar" MaxLength="10" />
+    <Property Name="Id_vetement" Type="int" />
+  </EntityType>
+  <EntityType Name="Ligne_Command">
+    <Key>
+      <PropertyRef Name="Id_Ligne_Command" />
+    </Key>
+    <Property Name="Id_Ligne_Command" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Command" Type="int" Nullable="false" />
+    <Property Name="Id_vetement" Type="int" Nullable="false" />
+    <Property Name="Montant" Type="float" Nullable="false" />
+    <Property Name="Nombre_Article" Type="int" Nullable="false" />
+    <Property Name="Adresse_livraison" Type="nvarchar(max)" />
+    <Property Name="Adresse_Facturation" Type="nvarchar(max)" />
+    <Property Name="Frais_Livraison" Type="float" />
+  </EntityType>
+  <EntityType Name="Produits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Categorie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="prix" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Soins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Type_produit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Prix_produit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vetements">
+    <Key>
+      <PropertyRef Name="Id_vetement" />
+    </Key>
+    <Property Name="Id_vetement" Type="int" Nullable="false" />
+    <Property Name="Type_vetement" Type="nvarchar(max)" />
+    <Property Name="Categorie" Type="nvarchar" MaxLength="50" />
+    <Property Name="Genre_vetement" Type="nvarchar(max)" />
+    <Property Name="Reference_vetement" Type="nvarchar" MaxLength="50" />
+    <Property Name="Libelle_vetement" Type="nvarchar(max)" />
+    <Property Name="Prix_vetement" Type="nvarchar(max)" />
+    <Property Name="Couleur" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Image1" Type="nvarchar(max)" />
+    <Property Name="Image2" Type="nvarchar(max)" />
+    <Property Name="Image3" Type="nvarchar(max)" />
+    <Property Name="Image4" Type="nvarchar(max)" />
+    <Property Name="Prix_unit" Type="int" />
+  </EntityType>
+  <EntityContainer Name="MaloncosDBModelStoreContainer">
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compte" EntityType="Self.Compte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Couleur" EntityType="Self.Couleur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ligne_Command" EntityType="Self.Ligne_Command" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Produits" EntityType="Self.Produits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Soins" EntityType="Self.Soins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vetements" EntityType="Self.Vetements" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

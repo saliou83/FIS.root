@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Maloncos.Models.Produit>
+@{
+    ViewBag.Title = "Produitfemme";
+    Layout = "~/Views/Shared/_LayoutWithLeft.cshtml"; 
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            @foreach (var parfumproduit in Model)
+            {
+                if ((parfumproduit.Categorie == "parfum femme"))
+                {
+                    string srcimg = "../../Content/photo/" + parfumproduit.Image;
+                <div class="col-md-3">
+                    <a href="@Url.Action("Details", new { id = parfumproduit.Id })">
+                        <img src="@srcimg"  title="@parfumproduit.Libelle" alt="@parfumproduit.Libelle" style="width:5em; height:5em;" /><br />
+                    </a><a href="Details"></a><span class="nom-produit">@parfumproduit.Libelle </span>
+                    <br />
+                    <span class="prix-produit">@parfumproduit.prix € </span>
+                    <br />
+                </div>
+                }
+            }
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

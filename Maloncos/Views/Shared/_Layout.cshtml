@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css"/>
+     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+     <!-- Optional theme -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"/>
+     
+    <link href="@Url.Content("~/Content/bootstrap/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Maloncos.css")" rel="stylesheet" type="text/css" />
+ 
+
+</head>
+<script type="text/javascript">
+    function afficher_cacher(id) {
+        
+        $('#' + id).toggleClass('hidden');
+
+        return true;
+    }
+</script>
+<body class="body-front-end">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                                    
+                    <!-- Logo entete -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: center; width:100%; margin:10px auto 5px; overflow: hidden;">
+                            <img src="../../Content/images/maloncos3.png" class="hidden-xs hidden-sm" alt="Accueil" />
+                            
+                        </div>
+                    </div>
+                    
+                  <div id="valeur" class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Compte
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dLabel">
+                   <li>@Html.ActionLink("me connecte","LogOn", "Account")</li>
+                   <li> @Html.ActionLink("inscrivez-vous", "CreateClient", "Home")</li>
+                   <li> @Html.ActionLink("commands", "LogOn", "Account")</li>
+                </ul>
+               
+                  <a href="#">
+                    <span class="glyphicon glyphicon-lock" aria-hidden="true"  style="font-size: 2em;margin:.2em .5em;padding:0.1em .5em;" onclick="javascript:afficher_cacher('texte');"></span>
+                    </a> 
+                   
+                    </div>
+                </div>
+                 <div id="texte" class="texte hidden" >
+                        Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso editos apparatu diem sextum idus Octobres, qui imperii eius annum tricensimum terminabat, insolentiae pondera gravius librans, siquid dubium deferebatur aut falsum, pro liquido accipiens et conperto, inter alia excarnificatum Gerontium Magnentianae comitem partis exulari maerore multavit.
+                  </div>
+            </div>
+       </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                    
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-grofetave-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <a class="navbar-brand visible-sm" href="#">Maloncos</a>
+                    </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-grofetave-navbar-collapse-1">
+                    <ul  class="nav navbar-nav" >                             
+                    <li class="dropdown btn-group btn dropdown-toggle"">
+                        <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Femme <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                                <div id="row" class="content" style="height: 100%;">
+                                    <div class="col-md-12">
+                                  <div class="container">
+                                     <div class="col-md-12 span8" >
+                                    <!--right-->                
+                                    <div class="full span4">
+                                        <div class="row-fluid">
+                                            <div class="col-md-3 span4 traitgauche" >
+                                                <li role="presentation">@Html.ActionLink("Collection", "Vetementfemme", "Home")</li> 
+                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                            </div>  
+                                            <div class="col-md-3 span4 traitgauche">  
+                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
+                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
+                                                                                       
+                                                <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>                             
+                                            </div>
+                                            
+                                           <div class="col-md-3 span4 traitgauche">
+                                                <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
+                                                <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
+                                                
+                                            </div> 
+                                        </div>
+                                    </div>  
+                                 </div>  
+                                  </div>
+                                  </div>
+                                </div>
+                              </ul>
+
+                            </li>
+                           
+                            <li class="dropdown btn-group btn dropdown-toggle" >
+                             <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Homme <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                                <div id="row" class="content" style="height: 100%;">
+                                    <div class="col-md-12">
+                                  <div class="container">
+                                     <div class="col-md-12 span8" >
+                                    <!--right-->                
+                                    <div class="full span4">
+                                        <div class="row-fluid">
+                                            <div class="col-md-3 span4 traitgauche" >
+                                                <li role="presentation">@Html.ActionLink("Collection", "VetementHomme", "Home")</li> 
+                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Pull&Gilet", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Pantalon", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Jeans", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                            </div>  
+                                            <div class="col-md-3 span4 traitgauche">  
+                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
+                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
+                                                                                       
+                                                <li role="presentation"> @Html.ActionLink("Ceintures&Sacs", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Portefeuilles&Montres", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Lunettes&Cravates", "Produitfemme", "Home")</li>                             
+                                            </div>
+                                            <div class="col-md-3 span4 traitgauche">
+                                                
+                                             </div>  
+                                           <div class="col-md-3 span4 traitgauche">
+                                                <li role="presentation">@Html.ActionLink("Tendance&les basiques", "Produitfemme", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Lookbook", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Les Matieres de la saison", "Produitfemme", "Home")</li>
+                                                <li role="presentation"> @Html.ActionLink("Le guide des vestes", "Produitfemme", "Home")</li>
+                                                
+                                            </div> 
+                                        </div>
+                                    </div>  
+                                 </div>  
+                                  </div>
+                                  </div>
+                                </div>
+                              </ul>
+                              </li>
+                            <li class="dropdown btn-group btn dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Enfant <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                                <div id="row" class="content" style="height: 100%;">
+                                    <div class="col-md-12">
+                                  <div class="container">
+                                     <div class="col-md-12 span8" >
+                                    <!--right-->                
+                                    <div class="full span4">
+                                        <div class="row-fluid">
+                                            <div class="col-md-3 span4 traitgauche" >
+                                                <li role="presentation">@Html.ActionLink("Collection", "Vetementenfant", "Home")</li> 
+                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "ProduitVeste", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "ProduitVeste", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                            </div>  
+                                            <div class="col-md-3 span4 traitgauche">  
+                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
+                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
+                                                                                       
+                                                <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>                                   
+                                                <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>                             
+                                            </div>
+                                            <div class="col-md-3 span4 traitgauche">
+                                                
+                                             </div>  
+                                           <div class="col-md-3 span4 traitgauche">
+                                                <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
+                                                <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
+                                                <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
+                                                <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
+                                                
+                                            </div> 
+                                        </div>
+                                    </div>  
+                                 </div>  
+                                  </div>
+                                  </div>
+                                </div>
+                              </ul>
+                              </li>
+                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Cheveux", "About", "Parfum")</li>
+                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Coiffure", "About", "Parfum")</li>
+                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Linge de maison", "About", "Parfum")</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+          </div>
+        </div>
+    </div>       
+    <div id="body" class="content" style="height: 100%;">
+        <div class="container">                
+            @RenderBody()
+        </div>
+        <span id="top-link-block" class="hidden">
+            <a href="#top" class="well well-sm"  onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+                <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+            </a>
+        </span><!-- /top-link-block -->
+    </div>      
+    <div style="clear: both"></div>      
+    <div id="content-spacer-bottom" style="height:100px;"></div>                    
+    <footer class="footer">
+        <div class="container navabr navbar-default" >
+            <div class="row">
+                <div class="col-md-3"><h4 style="color:red; font-weight:bold">Commande</h4> <span> Livraison</span> <br /> <span> Retour</span><br /> <span> Suivie Commande</span></div>
+                <div class="col-md-3"><h4>Payement Sécuriser</h4></div>
+                <div class="col-md-3"><h4>Aide et Service</h4></div>
+                <div class="col-md-3"><h4>Malancos</h4></div>
+            </div>
+        </div>
+    </footer>
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

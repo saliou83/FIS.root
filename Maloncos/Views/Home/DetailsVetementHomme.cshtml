@@ -1,0 +1,135 @@
+﻿@model Maloncos.Models.Vetements
+@{
+    ViewBag.Title = "DetailsVetementHomme";
+}
+
+<html>
+<head>
+<script language="JavaScript">
+    function display_photo(p_name, p_w, p_h, p_legend) {
+        if (self.innerWidth) {
+            winwidth = self.innerWidth;
+            winheight = self.innerHeight;
+        }
+        else if (document.documentElement && document.documentElement.clientWidth) {
+            winwidth = document.documentElement.clientWidth;
+            winheight = document.documentElement.clientHeight;
+        }
+        else if (document.body) {
+            winwidth = document.body.clientWidth;
+            winheight = document.body.clientHeight;
+        }
+        if (Number(p_w) < winwidth) winwidth = Number(p_w);
+        if (Number(p_h) < winheight) winheight = Number(p_h);
+        winwidth += 8; winheight += 40;
+        pwin = window.open("", "", "toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=1,scrollbars=yes,copyhistory=0,width=" + winwidth + ",height=" + winheight + ",left=10,top=10");
+        pwin.document.write("<html><head>");
+        pwin.document.write("<title>Zoom</title>");
+        pwin.document.write("<style type=text/css>");
+        pwin.document.write("body {");
+        pwin.document.write("margin:0;");
+        pwin.document.write("padding:0;");
+        pwin.document.write("color:white;");
+        pwin.document.write("background-color:black; }");
+        pwin.document.write("</style>");
+        pwin.document.write("</head>");
+        pwin.document.write("<body>");
+        pwin.document.write("<img src=" + p_name + " width=" + p_w + " height=" + p_h + ">");
+        pwin.document.write("<table noborder width=100%><tr>");
+        pwin.document.write("<form><td align=left>" + p_legend + "</td>");
+        pwin.document.write("<td align=right><input type='button' value='Fermer' onClick='window.close()'></td>");
+        pwin.document.write("</tr></table></form>");
+        pwin.document.write("</body></html>");
+    }
+</script>
+</head>
+
+<div class="container">
+    <div class="row">
+        @{
+            string srcimg = "../../Content/images/" + Model.Image;
+            string srcimg1 = "../../Content/images/" + Model.Image1;
+            string srcimg2 = "../../Content/images/" + Model.Image2;
+            string srcimg3 = "../../Content/images/" + Model.Image3;
+            string srcimg31 = "../../Content/images/guide-taille.jpg";
+            
+        }
+        <div class="col-md-2">
+            <a href="javascript:display_photo('@srcimg3','1160','828','Une légende')">
+                <img src="@srcimg3" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+            </a>
+            <a href="javascript:display_photo('@srcimg1','1160','828','Une légende')">
+                <img src="@srcimg1" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+             </a>
+            <a href="javascript:display_photo('@srcimg2','1160','828','Une légende')">
+                <img src="@srcimg2" title="@Model.Type_vetement" alt="@Model.Type_vetement" style="width:15em; height:13em;" /><br />
+                </a>
+</div>
+        <div class="col-md-4">
+        <a href="javascript:display_photo('@srcimg','1160','828','Une légende')">
+            <img src="@srcimg"  title="@Model.Type_vetement" alt="@Model.Type_vetement" align="left" hspace="30"   style="width:20em; height:30em;" />
+        </a>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <span>@Model.Type_vetement </span>
+                <br />
+                <p>
+                </p>
+            </div>
+            <div class="row">
+                <span class="hidden-sm" style="color: #BDBDBD">@Model.Reference_vetement </span>
+                <br />
+                <br />
+            </div>
+            <div class="row">
+                <h6>Couleur: <span  style="color: #BDBDBD">@Model.Couleur </span></h6>
+                <br />
+            </div>
+            <div class="row">
+                <span class="prix-produit">@Model.Description </span>
+                <br />
+                <br />
+            </div>
+            
+            <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-5 input-group-sm">
+                    <select class="form-control form-sm">
+                        <option>36</option>
+                        <option>38</option>
+                        <option>40</option>
+                        <option>42</option>
+                        <option>46</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <br /> <br />
+                    <label>
+                         <a href="javascript:display_photo('@srcimg31','565','628','Une légende')">
+                           <span style="color: #BDBDBD">guide des tailles </span>
+                         </a>
+                        <br />
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" style="background-color: #333333">
+                        <span>AJOUTER AU PANIER </span>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">
+                        Sign in</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>
+</html>

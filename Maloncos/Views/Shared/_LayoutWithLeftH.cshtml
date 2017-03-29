@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div  class="row">
+    <div  class="col-md-2">
+        @Html.Partial("~/Views/Partial/_LeftNavigationH.cshtml");
+    </div>    
+    <div class="col-md-10">
+        @RenderBody()
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Maloncos.Models.Vetements>
+@{
+    ViewBag.Title = "VetementHomme";
+    Layout = "~/Views/Shared/_LayoutWithLeftH.cshtml";    
+}
+@if (Model.Any())
+{
+
+
+    foreach (var vetementproduit in Model)
+    {
+        if ((vetementproduit.Categorie == "homme"))
+        {
+            string srcimg = "../../Content/images/" + vetementproduit.Image;
+    <div class="col-md-3">
+        <a href="@Url.Action("DetailsVetementhomme", new { id = vetementproduit.Id_vetement })">
+            <img src="@srcimg"  title="@vetementproduit.Type_vetement" alt="@vetementproduit.Type_vetement" style="width:15em; height:18em;" /><br />
+        </a><a href="Details"></a><span class="nom-produit">@vetementproduit.Type_vetement
+        </span>
+        <br />
+        <span class="nom-produit">@vetementproduit.Genre_vetement </span>
+        <br />
+        <span class="prix-produit">@vetementproduit.Prix_vetement € </span>
+        <br />
+    </div>
+        }
+    }
+}
+else
+{ 
+    <div>
+        pas de données
+    </div>
+}
+<div style="clear: both">
+</div>

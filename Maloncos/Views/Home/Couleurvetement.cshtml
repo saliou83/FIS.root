@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Couleurvetement";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Partial("~/Views/Partial/_LeftNavigation.cshtml")
+        </div>
+        <div class="col-md-10">
+            @foreach (var vetement in Model)
+            {
+                if ((vetement.Categorie == "femme"))
+                {
+                    string srcimg = "../../Content/images/" + vetement.Image;
+                <div class="col-md-3">
+                    <a href="@Url.Action("DetailsVetementfemme")">
+                        <img src="@srcimg"  title="@vetement.Type_vetement" alt="@vetement.Type_vetement" style="width:10em; height:10em;" /><br />
+                    </a><a href="Details"></a><span class="nom-produit">@vetement.Type_vetement </span>
+                    <br />
+                    <span class="nom-produit">@vetement.Genre_vetement </span>
+                    <br />
+                    <span class="prix-produit">@vetement.Prix_vetement € </span>
+                    <br />
+                </div>
+                }
+
+            }
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

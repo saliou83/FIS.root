@@ -1,0 +1,84 @@
+﻿@model Maloncos.Areas.Admin.Models.VetementModel
+
+@{
+    ViewBag.Title = "CreateVetement";
+}
+
+<h2>CreateVetement</h2>
+@using (Html.BeginForm("CreateVetement", "Vetement", FormMethod.Post, new { enctype = "multipart/form-data", area = "Admin" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Vetement</legend>
+       
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Type_vetement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Type_vetement)
+            @Html.ValidationMessageFor(model => model.Type_vetement)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Categorie)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Categorie)
+            @Html.ValidationMessageFor(model => model.Categorie)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Genre_vetement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Genre_vetement)
+            @Html.ValidationMessageFor(model => model.Genre_vetement)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Reference_vetement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Reference_vetement)
+            @Html.ValidationMessageFor(model => model.Reference_vetement)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Libelle_vetement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Libelle_vetement)
+            @Html.ValidationMessageFor(model => model.Libelle_vetement)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prix_vetement)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prix_vetement)
+            @Html.ValidationMessageFor(model => model.Prix_vetement)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Couleur)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Couleur)
+            @Html.ValidationMessageFor(model => model.Couleur)
+
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div class="editor-field">
+            
+            @Html.TextBoxFor(model => model.Image)        
+            @Html.ValidationMessageFor(model => model.Image)
+        </div>
+
+        <p>
+            <input type="submit" value="Ajouter" />
+        </p>
+    </fieldset>
+}

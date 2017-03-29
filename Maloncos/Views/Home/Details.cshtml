@@ -1,0 +1,27 @@
+﻿@model Maloncos.Models.Produit
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            @Html.Partial("~/Views/Partial/_LeftNavigation.cshtml")
+        </div>
+        <div class="col-md-10">
+            @{
+                string srcimg = "../../Content/photo/" + Model.Image;
+            }
+            <div class="produit">
+                <img src="@srcimg"  title="@Model.Libelle" alt="@Model.Libelle" style="width:15em; height:13em;" /><br />
+                <span class="nom-produit">@Model.Libelle </span>
+                <br />
+                <span class="prix-produit">@Model.Description </span>
+                <br />
+                <span class="prix-produit">@Model.Categorie </span>
+                <br />
+            </div>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

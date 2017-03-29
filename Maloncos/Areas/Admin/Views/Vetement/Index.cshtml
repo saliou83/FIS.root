@@ -1,0 +1,37 @@
+﻿@model List<Maloncos.Models.Vetements>
+
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+<p>
+    @Html.ActionLink("Ajouter un vetement", "CreateVetement");
+</p>
+<table>
+   <tr>
+    
+        <th> Categorie vetement</th>
+        <th> Libelle Vetement </th>
+        <th> Prix du vetement</th>
+        <th> Description du vetement</th>
+        <th> Image du vetement</th>
+    </tr>
+   @foreach (var item in Model)
+   {
+       string srcimg = "../../Content/images/" + item.Image;
+       <tr>
+        
+            <td> <span>@item.Categorie </span> </td>
+            <td> <span> @item.Libelle_vetement </span> </td>
+            <td> <span>@item.Prix_vetement </span> </td>
+            <td> <span> @item.Description</span> </td>
+            <td> <img src="@srcimg"  title="item.Type_vetement" alt="item.Image" align="left" hspace="30"   style="width:10em; height:10em;" /> </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_vetement }) 
+                @Html.ActionLink("Details", "Details", new { id = item.Id_vetement }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_vetement })
+            </td>
+    </tr>
+   }
+</table>

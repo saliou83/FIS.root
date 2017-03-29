@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MaloncosDBModelStoreContainer" CdmEntityContainer="MaloncosDBEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email_Client" ColumnName="Email_Client" />
+          <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+          <ScalarProperty Name="Nom_Client" ColumnName="Nom_Client" />
+          <ScalarProperty Name="Prenom_Client" ColumnName="Prenom_Client" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Code_postal" ColumnName="Code_postal" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commands">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Commands">
+        <MappingFragment StoreEntitySet="Commands">
+          <ScalarProperty Name="Id_Command" ColumnName="Id_Command" />
+          <ScalarProperty Name="Date_Command" ColumnName="Date_Command" />
+          <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compte">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Compte">
+        <MappingFragment StoreEntitySet="Compte">
+          <ScalarProperty Name="Id_Compte" ColumnName="Id_Compte" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Motdepasse" ColumnName="Motdepasse" />
+          <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Couleur">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Couleur">
+        <MappingFragment StoreEntitySet="Couleur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Couleur1" ColumnName="Couleur" />
+          <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligne_Command">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Ligne_Command">
+        <MappingFragment StoreEntitySet="Ligne_Command">
+          <ScalarProperty Name="Id_Ligne_Command" ColumnName="Id_Ligne_Command" />
+          <ScalarProperty Name="Id_Command" ColumnName="Id_Command" />
+          <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+          <ScalarProperty Name="Montant" ColumnName="Montant" />
+          <ScalarProperty Name="Nombre_Article" ColumnName="Nombre_Article" />
+          <ScalarProperty Name="Adresse_livraison" ColumnName="Adresse_livraison" />
+          <ScalarProperty Name="Adresse_Facturation" ColumnName="Adresse_Facturation" />
+          <ScalarProperty Name="Frais_Livraison" ColumnName="Frais_Livraison" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produits">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Produits">
+        <MappingFragment StoreEntitySet="Produits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="prix" ColumnName="prix" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Soins">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Soins">
+        <MappingFragment StoreEntitySet="Soins">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type_produit" ColumnName="Type_produit" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Prix_produit" ColumnName="Prix_produit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vetements">
+      <EntityTypeMapping TypeName="MaloncosDBModel.Vetements">
+        <MappingFragment StoreEntitySet="Vetements">
+          <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+          <ScalarProperty Name="Type_vetement" ColumnName="Type_vetement" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Genre_vetement" ColumnName="Genre_vetement" />
+          <ScalarProperty Name="Reference_vetement" ColumnName="Reference_vetement" />
+          <ScalarProperty Name="Libelle_vetement" ColumnName="Libelle_vetement" />
+          <ScalarProperty Name="Prix_vetement" ColumnName="Prix_vetement" />
+          <ScalarProperty Name="Couleur" ColumnName="Couleur" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="Prix_unit" ColumnName="Prix_unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
