@@ -7,7 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using Maloncos.Models;
 
-namespace Maloncos.Controllers
+namespace Maloncos.Controllers 
 {
     public class AccountController : Controller
     {
