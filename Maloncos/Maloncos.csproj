@@ -172,14 +172,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ASPNETDB.MDF" />
-    <Content Include="App_Data\aspnetdb_log.ldf">
-      <DependentUpon>ASPNETDB.MDF</DependentUpon>
-    </Content>
-    <Content Include="App_Data\MaloncosDB.mdf" />
-    <Content Include="App_Data\MaloncosDB_log.ldf">
-      <DependentUpon>MaloncosDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
@@ -378,6 +370,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
