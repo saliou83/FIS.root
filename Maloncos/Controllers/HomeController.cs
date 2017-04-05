@@ -96,6 +96,7 @@ namespace Maloncos.Controllers
         public ActionResult CreateClient()
         {
             var client = new ClientsModel();
+            
             return View(client);
         } 
 
@@ -129,10 +130,22 @@ namespace Maloncos.Controllers
                 return View();
             }
         }
-        
+        public ActionResult PageCheveux()
+        {
+
+            return View();
+
+        }
+        public ActionResult AffichageCadeau()
+        {
+
+            return View();
+
+        }
+
         //
         // GET: /Home/Edit/5
- 
+
         public ActionResult Edit(int id)
         {
             return View(_db.Produits.First(i => i.Id == id));

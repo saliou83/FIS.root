@@ -177,6 +177,7 @@
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\cheveux\herbes.jpg" />
     <Content Include="Content\images\fille.jpg" />
     <Content Include="Content\images\fille1.jpg" />
     <Content Include="Content\images\fille2.jpg" />
@@ -203,7 +204,8 @@
     <Content Include="Content\photo\img7.jpg" />
     <Content Include="Content\photo\img8.jpg" />
     <Content Include="Content\photo\img9.jpg" />
-    <Content Include="Content\stylesimage.css" />
+    <Content Include="Content\Site1.css" />
+    <Content Include="Content\stylesimage1.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -280,6 +282,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Home\AffichageCadeau.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -310,6 +313,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\CreateClient.cshtml" />
+    <Content Include="Views\Home\PageCheveux.cshtml" />
+    <Content Include="Views\Shared\_LayoutGauche.cshtml" />
+    <Content Include="Views\Partial\_RightNavigationGaucheH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
