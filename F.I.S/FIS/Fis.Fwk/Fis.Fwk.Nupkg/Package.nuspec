@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package >
+  <metadata>
+    <id>Mit.Fwk</id>
+    <version>1.0.0</version>
+    <title>Fis.Fwk</title>
+    <authors>S.FALL</authors>
+    <owners></owners>
+    <description>
+      Framework F.I.S.
+    </description>
+    <releaseNotes>
+      1.0.16 : Création du projet Nuget
+    </releaseNotes>
+    <summary>
+      Framework FIS.
+    </summary>
+    <language>fr-FR</language>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright  2017</copyright>
+    <dependencies>
+      <dependency id="log4net" version="2.0.8" />
+      <dependency id="EntityFramework" version="6.1.3" />
+    </dependencies>
+    <references></references>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="..\fis.fwt.core\bin\Release\Fis.Fwk.Core.dll" target="lib\net452" />
+    <file src="..\fis.Fwk.Security\bin\Release\Fis.Fwk.Security.dll" target="lib\net452" />
+    <file src="..\fis.fwt.tools\bin\Release\Fis.Fwk.Tools.dll" target="lib\net452" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>

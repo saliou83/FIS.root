@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk", "Fis.Fwk\Fis.Fwk.csproj", "{225FAC6B-08C5-43E9-AA8B-339BB6C8DA41}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{92A2C64C-4304-43AD-A51E-38CA5C536EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk.Nupkg", "Fis.Fwk.Nupkg\Fis.Fwk.Nupkg.csproj", "{AC856B08-4BEF-4361-8C34-CDADB52CF154}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk.Core", "Fis.Fwk.Core\Fis.Fwk.Core.csproj", "{AC8D08B9-E792-45B9-9911-5B2A6197C130}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk.Tools", "Fis.Fwk.Tools\Fis.Fwk.Tools.csproj", "{A9DA32FC-84AA-43C2-9278-F0244C940378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk.Test", "Fis.Fwk.Test\Fis.Fwk.Test.csproj", "{5DA948C7-EE2B-4792-B162-D6911C2F1253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fis.Fwk.Security", "Fis.Fwk.Security\Fis.Fwk.Security.csproj", "{B5D70911-F475-42F7-B832-6B30814178FA}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -15,12 +25,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{225FAC6B-08C5-43E9-AA8B-339BB6C8DA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{225FAC6B-08C5-43E9-AA8B-339BB6C8DA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{225FAC6B-08C5-43E9-AA8B-339BB6C8DA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{225FAC6B-08C5-43E9-AA8B-339BB6C8DA41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC856B08-4BEF-4361-8C34-CDADB52CF154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC856B08-4BEF-4361-8C34-CDADB52CF154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC856B08-4BEF-4361-8C34-CDADB52CF154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC856B08-4BEF-4361-8C34-CDADB52CF154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC8D08B9-E792-45B9-9911-5B2A6197C130}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8D08B9-E792-45B9-9911-5B2A6197C130}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8D08B9-E792-45B9-9911-5B2A6197C130}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8D08B9-E792-45B9-9911-5B2A6197C130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9DA32FC-84AA-43C2-9278-F0244C940378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9DA32FC-84AA-43C2-9278-F0244C940378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9DA32FC-84AA-43C2-9278-F0244C940378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9DA32FC-84AA-43C2-9278-F0244C940378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA948C7-EE2B-4792-B162-D6911C2F1253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA948C7-EE2B-4792-B162-D6911C2F1253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA948C7-EE2B-4792-B162-D6911C2F1253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA948C7-EE2B-4792-B162-D6911C2F1253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D70911-F475-42F7-B832-6B30814178FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D70911-F475-42F7-B832-6B30814178FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D70911-F475-42F7-B832-6B30814178FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D70911-F475-42F7-B832-6B30814178FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC856B08-4BEF-4361-8C34-CDADB52CF154} = {92A2C64C-4304-43AD-A51E-38CA5C536EBB}
 	EndGlobalSection
 EndGlobal
