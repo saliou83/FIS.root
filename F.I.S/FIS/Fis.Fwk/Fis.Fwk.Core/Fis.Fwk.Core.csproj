@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension\String.cs" />
     <Compile Include="Geoloc\Geolocalisation.cs" />
     <Compile Include="Log\LogManager.cs" />
     <Compile Include="Manager\Singleton.cs" />
