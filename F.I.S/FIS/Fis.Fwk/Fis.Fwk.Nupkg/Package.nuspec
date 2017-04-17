@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <package >
   <metadata>
-    <id>Mit.Fwk</id>
+    <id>Fis.Fwk</id>
     <version>1.0.0</version>
     <title>Fis.Fwk</title>
     <authors>S.FALL</authors>
@@ -26,9 +26,9 @@
     <tags></tags>
   </metadata>
   <files>
-    <file src="..\fis.fwt.core\bin\Release\Fis.Fwk.Core.dll" target="lib\net452" />
-    <file src="..\fis.Fwk.Security\bin\Release\Fis.Fwk.Security.dll" target="lib\net452" />
-    <file src="..\fis.fwt.tools\bin\Release\Fis.Fwk.Tools.dll" target="lib\net452" />
+    <file src="C:\Users\salio\Documents\Visual Studio 2015\Projects\F.I.S\FIS\Fis.Fwk\Fis.Fwk.Core\bin\Release\Fis.Fwk.Core.dll" target="lib\net452" />
+    <file src="C:\Users\salio\Documents\Visual Studio 2015\Projects\F.I.S\FIS\Fis.Fwk\Fis.Fwk.Security\bin\Release\Fis.Fwk.Security.dll" target="lib\net452" />
+    <file src="C:\Users\salio\Documents\Visual Studio 2015\Projects\F.I.S\FIS\Fis.Fwk\Fis.Fwk.Tools\bin\Release\Fis.Fwk.Tools.dll" target="lib\net452" />
     <file src="tools\" target="tools" />
     <file src="content\" target="content" />
   </files>
