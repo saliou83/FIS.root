@@ -142,6 +142,10 @@ namespace Maloncos.Controllers
             return View();
 
         }
+        public ActionResult PousseCheveux()
+        {
+            return View();
+        }
 
         //
         // GET: /Home/Edit/5
@@ -149,6 +153,10 @@ namespace Maloncos.Controllers
         public ActionResult Edit(int id)
         {
             return View(_db.Produits.First(i => i.Id == id));
+        }
+        public ActionResult Guidecrepus()
+        {
+            return View();
         }
 
         //
