@@ -124,6 +124,7 @@
     <Compile Include="Areas\Admin\Controllers\VetementController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PanierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -141,6 +142,7 @@
     <Compile Include="Models\Couleur.cs">
       <DependentUpon>MaloncosDBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enum\TypeProduitEnum.cs" />
     <Compile Include="Models\Ligne_Command.cs">
       <DependentUpon>MaloncosDBModels.tt</DependentUpon>
     </Compile>
@@ -159,6 +161,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaloncosDBModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PanierModel.cs" />
+    <Compile Include="Models\ProduitModel.cs" />
+    <Compile Include="Models\ProduitPanierModel.cs" />
     <Compile Include="Models\Produits.cs">
       <DependentUpon>MaloncosDBModels.tt</DependentUpon>
     </Compile>
@@ -177,6 +182,7 @@
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\cheveuxstyle.css" />
     <Content Include="Content\cheveux\herbes.jpg" />
     <Content Include="Content\images\fille.jpg" />
     <Content Include="Content\images\fille1.jpg" />
@@ -316,6 +322,8 @@
     <Content Include="Views\Home\PageCheveux.cshtml" />
     <Content Include="Views\Shared\_LayoutGauche.cshtml" />
     <Content Include="Views\Partial\_RightNavigationGaucheH.cshtml" />
+    <Content Include="Views\Home\PousseCheveux.cshtml" />
+    <Content Include="Views\Home\Guidecrepus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

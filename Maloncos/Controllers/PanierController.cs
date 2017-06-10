@@ -12,7 +12,7 @@ namespace Maloncos.Controllers
     public class PanierController : Controller
     {
         PanierModel panier = new PanierModel();
-        
+
         //
         // GET: /Home/
         private MaloncosDBEntities _db = new MaloncosDBEntities();
@@ -21,26 +21,38 @@ namespace Maloncos.Controllers
             return RedirectToAction("Accueil");
         }
 
-       public ActionResult AjouterPanier(Vetements vetement, string nompanier, int n=1)
+        [HttpPost]
+        public ActionResult AddProduitToPanier(ProduitPanierModel produit)
         {
-            string userId = Membership.GetUser().ProviderUserKey.ToString();
-            HttpCookie cookie = Request.Cookies["panier"];
-            if( cookie != null)
+            PanierModel panier;
+            if (this.Session["panier_maloncos"] != null)
             {
-                Response.Cookies["panier"].Expires = DateTime.Now.AddHours(12);
-                panier.NomPanier = nompanier;
-                panier.Produits.Add(n,vetement);
-                panier.idclient = userId;
-                
-
-
+                panier = (PanierModel)Session["panier_maloncos"];
             }
             else
-                Response.Cookies["panier"].Expires = DateTime.Now.AddHours(12);
-                panier.NomPanier = nompanier;
-                panier.Produits.Add(n,vetement);
-                panier.idclient = userId;
-            return View();
+            {
+                panier = new PanierModel()
+                {
+                    idclient = User.Identity.Name,
+                    NomPanier = string.Format("panier_{0}", User.Identity),
+                    Produits = new List<ProduitPanierModel>()
+                };
+            }
+
+            //Si le produit est dans le panier, on augemente la quanté
+            if (panier.Produits.Any(p => p.Id == produit.Id))
+            {
+                panier.Produits.FirstOrDefault(p => p.Id == produit.Id).quantite += produit.quantite;
+            }
+            else
+            {
+                panier.Produits.Add(produit);
+            }
+
+            Session["panier_maloncos"] = panier;
+
+            return Json(new { resultat = "OK", value = panier });
         }
+        
     }
 }
