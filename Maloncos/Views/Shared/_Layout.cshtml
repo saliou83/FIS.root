@@ -15,6 +15,8 @@
     <link href="@Url.Content("~/Content/bootstrap/bootstrap.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Maloncos.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/stylesimage1.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/cheveuxstyle.css")" rel="stylesheet" type="text/css" />
+
  
 
 </head>
@@ -81,147 +83,162 @@
                     </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-grofetave-navbar-collapse-1">
-                    <ul  class="nav navbar-nav" >                             
-                    <li class="dropdown btn-group btn dropdown-toggle"">
-                        <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Femme <span class="caret"></span></a>
-                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown btn-group btn dropdown-toggle" ">
+                            <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Femme <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left -31px; right -994px;">
                                 <div id="row" class="content" style="height: 100%;">
                                     <div class="col-md-12">
-                                  <div class="container">
-                                     <div class="col-md-12 span8" >
-                                    <!--right-->                
-                                    <div class="full span4">
-                                        <div class="row-fluid">
-                                            <div class="col-md-3 span4 traitgauche" >
-                                                <li role="presentation">@Html.ActionLink("Collection", "Vetementfemme", "Home")</li> 
-                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
-                                            </div>  
-                                            <div class="col-md-3 span4 traitgauche">  
-                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
-                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
-                                                                                       
-                                                <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>                             
-                                            </div>
-                                            
-                                           <div class="col-md-3 span4 traitgauche">
-                                                <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
-                                                <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
-                                                
-                                            </div> 
-                                        </div>
-                                    </div>  
-                                 </div>  
-                                  </div>
-                                  </div>
-                                </div>
-                              </ul>
+                                        <div class="container">
+                                            <div class="col-md-12 span8">
+                                                <!--right-->
+                                                <div class="full span4">
+                                                    <div class="row-fluid">
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Collection", "Vetementfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
 
-                            </li>
-                           
-                            <li class="dropdown btn-group btn dropdown-toggle" >
-                             <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Homme <span class="caret"></span></a>
-                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                                                            <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>
+                                                        </div>
+
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
+                                                            <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+
+                        </li>
+
+                        <li class="dropdown btn-group btn dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Homme <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left -31px; right -994px;">
                                 <div id="row" class="content" style="height: 100%;">
                                     <div class="col-md-12">
-                                  <div class="container">
-                                     <div class="col-md-12 span8" >
-                                    <!--right-->                
-                                    <div class="full span4">
-                                        <div class="row-fluid">
-                                            <div class="col-md-3 span4 traitgauche" >
-                                                <li role="presentation">@Html.ActionLink("Collection", "VetementHomme", "Home")</li> 
-                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Pull&Gilet", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Pantalon", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Jeans", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
-                                            </div>  
-                                            <div class="col-md-3 span4 traitgauche">  
-                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
-                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
-                                                                                       
-                                                <li role="presentation"> @Html.ActionLink("Ceintures&Sacs", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Portefeuilles&Montres", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Lunettes&Cravates", "Produitfemme", "Home")</li>                             
+                                        <div class="container">
+                                            <div class="col-md-12 span8">
+                                                <!--right-->
+                                                <div class="full span4">
+                                                    <div class="row-fluid">
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Collection", "VetementHomme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "Produitfemme", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Pull&Gilet", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Pantalon", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Jeans", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
+
+                                                            <li role="presentation"> @Html.ActionLink("Ceintures&Sacs", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Portefeuilles&Montres", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Lunettes&Cravates", "Produitfemme", "Home")</li>
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Tendance&les basiques", "Produitfemme", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Lookbook", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Les Matieres de la saison", "Produitfemme", "Home")</li>
+                                                            <li role="presentation"> @Html.ActionLink("Le guide des vestes", "Produitfemme", "Home")</li>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3 span4 traitgauche">
-                                                
-                                             </div>  
-                                           <div class="col-md-3 span4 traitgauche">
-                                                <li role="presentation">@Html.ActionLink("Tendance&les basiques", "Produitfemme", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Lookbook", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Les Matieres de la saison", "Produitfemme", "Home")</li>
-                                                <li role="presentation"> @Html.ActionLink("Le guide des vestes", "Produitfemme", "Home")</li>
-                                                
-                                            </div> 
                                         </div>
-                                    </div>  
-                                 </div>  
-                                  </div>
-                                  </div>
+                                    </div>
                                 </div>
-                              </ul>
-                              </li>
-                            <li class="dropdown btn-group btn dropdown-toggle">
+                            </ul>
+                        </li>
+                        <li class="dropdown btn-group btn dropdown-toggle">
                             <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Enfant <span class="caret"></span></a>
-                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left: -31px; right: -994px;">
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left -31px; right -994px;">
                                 <div id="row" class="content" style="height: 100%;">
                                     <div class="col-md-12">
-                                  <div class="container">
-                                     <div class="col-md-12 span8" >
-                                    <!--right-->                
-                                    <div class="full span4">
-                                        <div class="row-fluid">
-                                            <div class="col-md-3 span4 traitgauche" >
-                                                <li role="presentation">@Html.ActionLink("Collection", "Vetementenfant", "Home")</li> 
-                                               <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "ProduitVeste", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "ProduitVeste", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
-                                            </div>  
-                                            <div class="col-md-3 span4 traitgauche">  
-                                                <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>   
-                                                <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
-                                                                                       
-                                                <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>                                   
-                                                <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>                             
+                                        <div class="container">
+                                            <div class="col-md-12 span8">
+                                                <!--right-->
+                                                <div class="full span4">
+                                                    <div class="row-fluid">
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Collection", "Vetementenfant", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Vestes&Manteaux", "ProduitVeste", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Pull&Cardigan", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Jeans&Pantalon", "ProduitVeste", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("T-shirts&sweats", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Robes&Jupes", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Chemises", "Produitfemme", "Home")</li>
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Chaussure", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Accessoires", "Produitfemme", "Home") </li>
+
+                                                            <li role="presentation"> @Html.ActionLink("Lingeries", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Maquillage", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Soin", "Produitfemme", "Home")</li>
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+
+                                                        </div>
+                                                        <div class="col-md-3 span4 traitgauche">
+                                                            <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
+                                                            <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
+                                                            <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
+                                                            <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3 span4 traitgauche">
-                                                
-                                             </div>  
-                                           <div class="col-md-3 span4 traitgauche">
-                                                <li role="presentation">@Html.ActionLink("Tendance", "Produitfemme", "Home") </li>
-                                                <li role="presentation">@Html.ActionLink("Beauté naturelle", "Produitfemme", "Home")</li>
-                                                <li role="presentation">@Html.ActionLink("Les essentiels de la saison", "Produitfemme", "Home")</li>
-                                                <li role="presentation"> @Html.ActionLink("les basiques", "Produitfemme", "Home")</li>
-                                                
-                                            </div> 
                                         </div>
-                                    </div>  
-                                 </div>  
-                                  </div>
-                                  </div>
+                                    </div>
                                 </div>
-                              </ul>
-                              </li>
-                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Cheveux", "PageCheveux", "Home")</li>
-                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Coiffure", "About", "Parfum")</li>
-                            <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Linge de maison", "About", "Parfum")</li>
-                        </ul>
-                    </div>
+                            </ul>
+                        </li>
+                        <li class="dropdown btn-group btn dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" id="menu1" data-toggle="dropdown" role="button" aria-expanded="false">Cheveux <span class="caret"></span></a>
+                            <ul class="dropdown-menu nav navbar-nav" role="menu" aria-labelledby="menu1" style=" left -31px; right -994px;">
+                                
+                                                                                       
+                                                           
+                                                                <li role="presentation">@Html.ActionLink("Journal de pousse", "PousseCheveux", "Home") </li>
+                                                                <li role="presentation">@Html.ActionLink("Guide des plantes", "PageCheveux", "Home")</li>
+                                                                <li role="presentation">@Html.ActionLink("Astuces conseils entretiens", "AffichageCadeau", "Home")</li>
+                                                                <li role="presentation"> @Html.ActionLink("Guide des cheveux crépus", "Guidecrepus", "Home")</li>
+                                                          
+                                                
+                                           
+                                
+                            </ul>
+                        </li>
+                        <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Coiffure", "About", "Parfum")</li>
+                        <li class="dropdown btn-group btn dropdown-toggle">@Html.ActionLink("Linge de maison", "About", "Parfum")</li>
+                    </ul>
+</div>
                 </div>
             </nav>
           </div>
