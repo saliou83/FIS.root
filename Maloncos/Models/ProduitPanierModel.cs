@@ -11,6 +11,6 @@ namespace Maloncos.Models
     [Serializable]
     public class ProduitPanierModel: ProduitModel
     {
-        public int quantite { get; set; }
+        public int Quantite { get; set; }
     }
 }

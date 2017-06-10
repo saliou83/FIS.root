@@ -33,8 +33,9 @@ namespace Maloncos.Controllers
             {
                 panier = new PanierModel()
                 {
-                    idclient = User.Identity.Name,
-                    NomPanier = string.Format("panier_{0}", User.Identity),
+
+                    idclient = User.Identity.IsAuthenticated? User.Identity.Name: string.Empty,
+                    NomPanier = "panier_maloncos",
                     Produits = new List<ProduitPanierModel>()
                 };
             }
@@ -42,7 +43,7 @@ namespace Maloncos.Controllers
             //Si le produit est dans le panier, on augemente la quanté
             if (panier.Produits.Any(p => p.Id == produit.Id))
             {
-                panier.Produits.FirstOrDefault(p => p.Id == produit.Id).quantite += produit.quantite;
+                panier.Produits.FirstOrDefault(p => p.Id == produit.Id).Quantite += produit.Quantite;
             }
             else
             {
@@ -51,7 +52,7 @@ namespace Maloncos.Controllers
 
             Session["panier_maloncos"] = panier;
 
-            return Json(new { resultat = "OK", value = panier });
+            return Json(new { resultat = "OK", panier = panier });
         }
         
     }
