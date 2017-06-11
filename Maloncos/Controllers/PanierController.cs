@@ -50,6 +50,7 @@ namespace Maloncos.Controllers
                 panier.Produits.Add(produit);
             }
 
+
             Session["panier_maloncos"] = panier;
 
             return Json(new { resultat = "OK", panier = panier });
