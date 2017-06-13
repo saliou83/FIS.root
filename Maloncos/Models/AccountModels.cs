@@ -28,9 +28,10 @@ namespace Maloncos.Models
     }
 
     public class LogOnModel
-    {
+    { 
         [Required]
-        [Display(Name = "User name")]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         [Required]
@@ -45,12 +46,27 @@ namespace Maloncos.Models
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Nom_Client")]
+        public string Nom_Client { get; set; }
+        [Required]
+        [Display(Name = "Prenom_Client")]
+        public string Prenom_Client { get; set; }
+        [Required]
+        [Display(Name = "Adresse")]
+        public string Adresse { get; set; }
+        [Required]
+        [Display(Name = "Code_postal")]
+        public string Code_postal { get; set; }
+        [Required]
+        [Display(Name = "Genre")]
+        public string Genre { get; set; }
+        [Required]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email address")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]

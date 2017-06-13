@@ -53,7 +53,7 @@ namespace Maloncos.Controllers
 
             Session["panier_maloncos"] = panier;
 
-            return Json(new { resultat = "OK", panier = panier });
+            return View();
         }
         
     }

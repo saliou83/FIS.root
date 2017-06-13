@@ -43,6 +43,7 @@
 <div class="container">
     @Html.Hidden("IdProduit", Model.Id_vetement)
     @Html.Hidden("Couleur", Model.Couleur)
+    @Html.Hidden("Prix", Model.Prix_vetement)
     <div class="row">
         @{
             string srcimg = "../../Content/images/" + Model.Image;
@@ -137,9 +138,10 @@
         e.preventDefault();
         var idProd = $("#IdProduit").val();
         var couleur = $("#Couleur").val();
+        var prix = $("#Prix").val();
         var url = "@Url.Action("AddProduitToPanier", "Panier")";
 
-        var model = { Id: idProd, Quantite: 1, Type: "Vetement", Libelle: "Robe", Couleur: couleur };
+        var model = { Id: idProd, Quantite: 1, Type: "Vetement", Libelle: "Robe", Couleur: couleur, Prix_vetement: prix };
 
         $.post(url, model, function (res) {
             alert(res.resultat);
