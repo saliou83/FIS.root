@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -213,45 +217,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Data\article.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\category.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\comment.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\content.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\image.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\label.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\language.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\senrevue.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>senrevue.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\senrevue.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\senrevue.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>senrevue.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Data\title.cs">
-      <DependentUpon>senrevue.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,16 +229,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Data\senrevue.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>senrevue.edmx</DependentUpon>
-      <LastGenOutput>senrevue.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Data\senrevue.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>senrevue.edmx</DependentUpon>
-      <LastGenOutput>senrevue.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -287,13 +242,6 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
-    <EntityDeploy Include="Data\senrevue.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>senrevue.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Data\senrevue.edmx.diagram">
-      <DependentUpon>senrevue.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
