@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="90562ba2ca5d46aa83b0b57b2db988de" Name="Diagram1">
+        <EntityTypeShape EntityType="senrevueModel.article" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.category" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.comment" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.content" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.image" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.label" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.language" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="senrevueModel.title" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="senrevueModel.FK_comment_article" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_content_article" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_title_article" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_comment_language" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_content_language" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_label_language" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.FK_title_language" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.article_category" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.article_image" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.category_image" ManuallyRouted="false" />
+        <AssociationConnector Association="senrevueModel.article_language" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
