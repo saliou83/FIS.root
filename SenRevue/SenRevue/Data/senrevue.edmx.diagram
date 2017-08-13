@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="353c01fb17c94f218b2e2cd4551586d1" Name="Diagram1" >
+        <EntityTypeShape EntityType="senrevueModel.article" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="senrevueModel.category" Width="1.5" PointX="3" PointY="12.75" />
+        <EntityTypeShape EntityType="senrevueModel.comment" Width="1.5" PointX="6" PointY="5.375" />
+        <EntityTypeShape EntityType="senrevueModel.content" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="senrevueModel.image" Width="1.5" PointX="5.25" PointY="9.125" />
+        <EntityTypeShape EntityType="senrevueModel.label" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="senrevueModel.language" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="senrevueModel.title" Width="1.5" PointX="3" PointY="3.625" />
+        <AssociationConnector Association="senrevueModel.FK_comment_article" />
+        <AssociationConnector Association="senrevueModel.FK_content_article" />
+        <AssociationConnector Association="senrevueModel.FK_title_article" />
+        <AssociationConnector Association="senrevueModel.FK_comment_language" />
+        <AssociationConnector Association="senrevueModel.FK_content_language" />
+        <AssociationConnector Association="senrevueModel.FK_label_language" />
+        <AssociationConnector Association="senrevueModel.FK_title_language" />
+        <AssociationConnector Association="senrevueModel.article_category" />
+        <AssociationConnector Association="senrevueModel.article_image" />
+        <AssociationConnector Association="senrevueModel.category_image" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
