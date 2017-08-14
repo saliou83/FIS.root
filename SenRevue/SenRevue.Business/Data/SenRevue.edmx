@@ -17,6 +17,7 @@
           <Property Name="modification_date" Type="datetime" Nullable="false" />
           <Property Name="art_user_id" Type="int" />
           <Property Name="art_home" Type="bit" Nullable="false" />
+          <Property Name="art_source" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="article_category">
           <Key>
@@ -392,6 +393,7 @@
           <NavigationProperty Name="category" Relationship="Self.article_category" FromRole="article" ToRole="category" />
           <NavigationProperty Name="image" Relationship="Self.article_image" FromRole="article" ToRole="image" />
           <NavigationProperty Name="language" Relationship="senrevueModel.article_language" FromRole="article" ToRole="language" />
+          <Property Name="art_source" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="category">
           <Key>
@@ -638,6 +640,7 @@
           <EntitySetMapping Name="article">
             <EntityTypeMapping TypeName="senrevueModel.article">
               <MappingFragment StoreEntitySet="article">
+                <ScalarProperty Name="art_source" ColumnName="art_source" />
                 <ScalarProperty Name="art_id" ColumnName="art_id" />
                 <ScalarProperty Name="art_active" ColumnName="art_active" />
                 <ScalarProperty Name="art_start_date" ColumnName="art_start_date" />

@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace SenRevue.Areas.Admin.Controllers
 {
+    // GET: Admin/Admin
+    [Authorize]
     public class AdminController : Controller
     {
-        // GET: Admin/Admin
-        [Authorize]
         public ActionResult Index()
         {
             return View();

@@ -29,6 +29,7 @@ namespace SenRevue.Business.Model
         public int? UserId { get; set; }
 
         public bool IsHome { get; set; }
+        public string Source { get; set; }
                 
         public List<CommentModel> Comments { get; set; }
 

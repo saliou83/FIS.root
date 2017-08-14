@@ -194,6 +194,7 @@ namespace SenRevue.Business.Manager
                 result.art_user_id = model.UserId;
                 result.creation_date = model.CreationDate;
                 result.modification_date = model.ModificationDate;
+                result.art_source = model.Source;
                 if (model.Categories != null && model.Categories.Any())
                 {
                     result.category = (ICollection<category>)model.Categories.Select(m => CategoryManager.Current.ToDbCategory(m));
@@ -235,6 +236,7 @@ namespace SenRevue.Business.Manager
                 result.UserId = model.art_user_id;
                 result.CreationDate = model.creation_date;
                 result.ModificationDate = model.modification_date;
+                result.Source = model.art_source;
                 if (model.language != null && model.language.Any())
                 {
                     result.Languages = model.language.Select(l => LanguageManager.Current.ToLanguageModel(l)).ToList();

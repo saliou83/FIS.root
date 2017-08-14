@@ -33,6 +33,7 @@ namespace SenRevue.Business.Data
         public System.DateTime modification_date { get; set; }
         public Nullable<int> art_user_id { get; set; }
         public bool art_home { get; set; }
+        public string art_source { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comment> comment { get; set; }
