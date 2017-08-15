@@ -12,6 +12,9 @@
     background-color: #3d7acc;
     border-color: #134094;
 }
+ul.senrevue > li > a {
+    color: #FFFFFF !important;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

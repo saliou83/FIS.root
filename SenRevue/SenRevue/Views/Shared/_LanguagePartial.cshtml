@@ -1,7 +1,7 @@
 ﻿@model SenRevue.Areas.Admin.Models.ViewModel.AdminViewModelBase
 @if (Model.Langs != null && Model.Langs.Count() > 1)
 {
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="senrevue nav navbar-nav navbar-right">
         @foreach (var item in Model.Langs.Where(l => l.Code != Model.DefaultLang))
         {
             <li>
