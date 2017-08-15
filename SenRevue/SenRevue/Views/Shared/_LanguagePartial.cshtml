@@ -5,7 +5,7 @@
         @foreach (var item in Model.Langs.Where(l => l.Code != Model.DefaultLang))
         {
             <li>
-                <a href="@item.Url" class="flag" title="@item.Libelle"><img class="img-responsive flag-logo" src="@item.Path" /></a>
+                <a href="@item.Url" class="flag" title="@item.Libelle"><img class="img-responsive flag-logo" src="@Url.Content(item.Path)" /></a>
             </li>
         }
     </ul>

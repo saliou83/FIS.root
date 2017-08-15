@@ -2,10 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using SenRevue.Areas.Admin.Models.ViewModel;
 
-namespace SenRevue.Models
+namespace SenRevue.Areas.Admin.Models.Account
 {
-    public class IndexViewModel
+    public class IndexViewModel: AdminViewModelBase
     {
         public bool HasPassword { get; set; }
         public IList<UserLoginInfo> Logins { get; set; }
@@ -14,18 +15,18 @@ namespace SenRevue.Models
         public bool BrowserRemembered { get; set; }
     }
 
-    public class ManageLoginsViewModel
+    public class ManageLoginsViewModel : AdminViewModelBase
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
     }
 
-    public class FactorViewModel
+    public class FactorViewModel : AdminViewModelBase
     {
         public string Purpose { get; set; }
     }
 
-    public class SetPasswordViewModel
+    public class SetPasswordViewModel : AdminViewModelBase
     {
         [Required]
         [StringLength(100, ErrorMessage = "Le {0} doit compter au moins {2} caractères.", MinimumLength = 6)]
@@ -39,7 +40,7 @@ namespace SenRevue.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class ChangePasswordViewModel
+    public class ChangePasswordViewModel : AdminViewModelBase
     {
         [Required]
         [DataType(DataType.Password)]
@@ -58,7 +59,7 @@ namespace SenRevue.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class AddPhoneNumberViewModel
+    public class AddPhoneNumberViewModel : AdminViewModelBase
     {
         [Required]
         [Phone]
@@ -66,7 +67,7 @@ namespace SenRevue.Models
         public string Number { get; set; }
     }
 
-    public class VerifyPhoneNumberViewModel
+    public class VerifyPhoneNumberViewModel : AdminViewModelBase
     {
         [Required]
         [Display(Name = "Code")]
@@ -78,7 +79,7 @@ namespace SenRevue.Models
         public string PhoneNumber { get; set; }
     }
 
-    public class ConfigureTwoFactorViewModel
+    public class ConfigureTwoFactorViewModel : AdminViewModelBase
     {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }

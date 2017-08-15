@@ -8,9 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using SenRevue.Models;
+using SenRevue.Areas.Admin.Models.Account;
+using SenRevue.Helpers;
 
-namespace SenRevue.Controllers
+namespace SenRevue.Areas.Admin.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -22,7 +23,7 @@ namespace SenRevue.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -34,9 +35,9 @@ namespace SenRevue.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -57,8 +58,10 @@ namespace SenRevue.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
+            var model = new LoginViewModel();
+            model.Title = LabelHelpers.GetLabel("admin_login_title");
+            ViewBag.ReturnUrl = Url.Action("Index", "Admin", new { Area = "Admin", languageCode = model.DefaultLang });
+            return View(model);
         }
 
         //
@@ -70,6 +73,7 @@ namespace SenRevue.Controllers
         {
             if (!ModelState.IsValid)
             {
+                model.Title = LabelHelpers.GetLabel("admin_login_title");
                 return View(model);
             }
 
@@ -120,7 +124,7 @@ namespace SenRevue.Controllers
             // Si un utilisateur entre des codes incorrects pendant un certain intervalle, le compte de cet utilisateur 
             // est alors verrouillé pendant une durée spécifiée. 
             // Vous pouvez configurer les paramètres de verrouillage du compte dans IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -155,8 +159,8 @@ namespace SenRevue.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -392,7 +396,7 @@ namespace SenRevue.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", new { returnUrl = "" });
         }
 
         //

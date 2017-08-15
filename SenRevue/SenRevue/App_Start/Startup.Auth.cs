@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using SenRevue.Models;
+using SenRevue.Areas.Admin.Models.Account;
 
 namespace SenRevue
 {
@@ -25,7 +25,7 @@ namespace SenRevue
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
+                LoginPath = new PathString("/Admin/fr/Account/Login"),
                 Provider = new CookieAuthenticationProvider
                 {
                     // Permet à l'application de valider le timbre de sécurité quand l'utilisateur se connecte.

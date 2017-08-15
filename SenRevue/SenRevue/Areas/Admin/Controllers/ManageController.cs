@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using SenRevue.Models;
+using SenRevue.Areas.Admin.Models.Account;
 
-namespace SenRevue.Controllers
+namespace SenRevue.Areas.Admin.Controllers
 {
     [Authorize]
     public class ManageController : Controller

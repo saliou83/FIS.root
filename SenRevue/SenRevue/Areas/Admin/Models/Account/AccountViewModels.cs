@@ -1,21 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using SenRevue.Areas.Admin.Models.ViewModel;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SenRevue.Models
+namespace SenRevue.Areas.Admin.Models.Account
 {
-    public class ExternalLoginConfirmationViewModel
+    public class ExternalLoginConfirmationViewModel: AdminViewModelBase
     {
         [Required]
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
     }
 
-    public class ExternalLoginListViewModel
+    public class ExternalLoginListViewModel : AdminViewModelBase
     {
         public string ReturnUrl { get; set; }
     }
 
-    public class SendCodeViewModel
+    public class SendCodeViewModel : AdminViewModelBase
     {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
@@ -23,7 +24,7 @@ namespace SenRevue.Models
         public bool RememberMe { get; set; }
     }
 
-    public class VerifyCodeViewModel
+    public class VerifyCodeViewModel : AdminViewModelBase
     {
         [Required]
         public string Provider { get; set; }
@@ -39,14 +40,14 @@ namespace SenRevue.Models
         public bool RememberMe { get; set; }
     }
 
-    public class ForgotViewModel
+    public class ForgotViewModel : AdminViewModelBase
     {
         [Required]
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
     }
 
-    public class LoginViewModel
+    public class LoginViewModel : AdminViewModelBase
     {
         [Required]
         [Display(Name = "Courrier électronique")]
@@ -62,7 +63,7 @@ namespace SenRevue.Models
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterViewModel
+    public class RegisterViewModel : AdminViewModelBase
     {
         [Required]
         [EmailAddress]
@@ -81,7 +82,7 @@ namespace SenRevue.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class ResetPasswordViewModel
+    public class ResetPasswordViewModel : AdminViewModelBase
     {
         [Required]
         [EmailAddress]
@@ -102,7 +103,7 @@ namespace SenRevue.Models
         public string Code { get; set; }
     }
 
-    public class ForgotPasswordViewModel
+    public class ForgotPasswordViewModel : AdminViewModelBase
     {
         [Required]
         [EmailAddress]
