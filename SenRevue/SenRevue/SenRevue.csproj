@@ -241,6 +241,9 @@
     <Content Include="Content\Flags\es_flags.png" />
     <Content Include="Content\Flags\fr_flags.png" />
     <Content Include="Content\Flags\fr_flags_min.png" />
+    <Content Include="Content\Icons\icon_1.png" />
+    <Content Include="Content\Icons\icon_2.png" />
+    <Content Include="Content\Icons\icon_3.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
