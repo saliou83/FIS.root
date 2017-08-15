@@ -1,5 +1,5 @@
 ﻿using SenRevue.Areas.Admin.Models.ViewModel;
-using SenRevue.Business.Manager;
+using SenRevue.Helpers;
 using System.Web.Mvc;
 
 namespace SenRevue.Areas.Admin.Controllers
@@ -16,7 +16,7 @@ namespace SenRevue.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var model = new AdminHomeViewModel();
-            model.Title = LabelManager.Current.GetLabel(model.DefaultLang.Code, "admin_home_title").Libelle;
+            model.Title = LabelHelpers.GetLabel("admin_home_title");
             return View(model);
         }
     }

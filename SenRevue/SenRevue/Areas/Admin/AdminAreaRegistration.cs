@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Configuration;
+using System.Web.Mvc;
 
 namespace SenRevue.Areas.Admin
 {
@@ -16,8 +17,9 @@ namespace SenRevue.Areas.Admin
         {
             context.MapRoute(
                 "Admin_default",
-                "Admin/{controller}/{action}/{id}",
-                new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+                "Admin/{languageCode}/{controller}/{action}/{id}",
+                new { languageCode = ConfigurationManager.AppSettings["application:defaultLang"],
+                    controller = "Admin", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

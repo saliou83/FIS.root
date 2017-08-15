@@ -8,5 +8,10 @@ namespace SenRevue.Areas.Admin.Models.ViewModel
         /// Détermine la langue courante
         /// </summary>
         public bool Current { get; set; }
+
+        /// <summary>
+        /// Url de la langue
+        /// </summary>
+        public string Url { get; set; }
     }
 }

@@ -5,10 +5,13 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-
+.navbar-inverse.senrevue {
+    background-color: #3d7acc;
+    border-color: #134094;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -21,4 +24,12 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+img.flag-logo
+{
+    max-width:30px !important;
+}
+a.flag
+{
+    padding: 5px !important;
 }

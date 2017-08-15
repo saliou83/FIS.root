@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,8 +16,9 @@ namespace SenRevue
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{languageCode}/{controller}/{action}/{id}",
+                defaults: new { languageCode = ConfigurationManager.AppSettings["application:defaultLang"],
+                    controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
