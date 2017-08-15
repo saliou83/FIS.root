@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using SenRevue.Areas.Admin.Models.ViewModel;
+using SenRevue.Business.Manager;
 using System.Web.Mvc;
 
 namespace SenRevue.Areas.Admin.Controllers
@@ -10,9 +8,16 @@ namespace SenRevue.Areas.Admin.Controllers
     [Authorize]
     public class AdminController : Controller
     {
+        /// <summary>
+        /// Page d'accueil
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var model = new AdminHomeViewModel();
+            model.Title = LabelManager.Current.GetLabel(model.DefaultLang.Code, "admin_home_title").Libelle;
+            return View(model);
         }
     }
 }
