@@ -23,7 +23,15 @@ namespace SenRevue.Helpers
                 var curLang = HttpContext.Current.Request.RequestContext.RouteData.Values["languageCode"];
                 var defaultLang = (curLang != null) ? curLang.ToString() 
                     : ConfigurationManager.AppSettings["application:defaultLang"];
-                result = LabelManager.Current.GetLabel(defaultLang, lblCode).Libelle;
+                var label = LabelManager.Current.GetLabel(defaultLang, lblCode);
+                if (label.Id > 0)
+                {
+                    result = label.Libelle;
+                }
+                else
+                {
+                    result = string.Format("K_{0}", lblCode);
+                }
             }
             catch (Exception ex)
             {

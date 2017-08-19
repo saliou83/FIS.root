@@ -143,7 +143,9 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            var model = new RegisterViewModel();
+            model.Title = LabelHelpers.GetLabel("admin_register_title");
+            return View(model);
         }
 
         //
@@ -171,6 +173,7 @@ namespace SenRevue.Areas.Admin.Controllers
                 }
                 AddErrors(result);
             }
+            model.Title = LabelHelpers.GetLabel("admin_register_title");
 
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
             return View(model);

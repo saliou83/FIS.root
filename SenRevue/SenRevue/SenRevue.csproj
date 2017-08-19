@@ -219,6 +219,7 @@
     <Compile Include="Areas\Admin\Models\Account\AccountViewModels.cs" />
     <Compile Include="Areas\Admin\Models\Account\IdentityModels.cs" />
     <Compile Include="Areas\Admin\Models\Account\ManageViewModels.cs" />
+    <Compile Include="Areas\Admin\Models\Account\RoleEnum.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\AdminHomeViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\AdminViewModelBase.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\LanguageViewModel.cs" />

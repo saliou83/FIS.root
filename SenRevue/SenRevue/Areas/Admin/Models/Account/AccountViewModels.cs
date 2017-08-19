@@ -1,6 +1,8 @@
 ﻿using SenRevue.Areas.Admin.Models.ViewModel;
+using SenRevue.Helpers;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace SenRevue.Areas.Admin.Models.Account
 {
@@ -63,23 +65,64 @@ namespace SenRevue.Areas.Admin.Models.Account
         public bool RememberMe { get; set; }
     }
 
-    public class RegisterViewModel : AdminViewModelBase
+    public class RegisterViewModel : AdminViewModelBase, IValidatableObject
     {
-        [Required]
-        [EmailAddress]
+        public RegisterViewModel()
+        {
+            Roles = GlobalHelpers.EnumToSelectListItem<RoleEnum>();
+        }
+
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
-
-        [Required]
-        [StringLength(100, ErrorMessage = "La chaîne {0} doit comporter au moins {2} caractères.", MinimumLength = 6)]
+        
         [DataType(DataType.Password)]
         [Display(Name = "Mot de passe")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmer le mot de passe ")]
-        [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
+        public string Role { get; set; }
+
+        public List<SelectListItem> Roles { get; set; }
+        
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("email_required_error"), new[] { nameof(Email) });
+            }
+            else if(GlobalHelpers.IsEmailValid(Email))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("email_invalid_error"), new[] { nameof(Email) });
+            }
+            if (string.IsNullOrEmpty(Password))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("password_required_error"), new[] { nameof(Password) });
+            }
+            else if(Password.Length < 6)
+            {
+                yield return new ValidationResult(string.Format(LabelHelpers.GetLabel("password_minlength_error"),6), 
+                    new[] { nameof(Password) });
+            }
+            if (string.IsNullOrEmpty(ConfirmPassword))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("confirm_password_required_error"), new[] { nameof(ConfirmPassword) });
+            }
+            if (string.IsNullOrEmpty(Role))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("role_required_error"), new[] { nameof(Role) });
+            }
+            if (!string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(ConfirmPassword))
+            {
+                if (Password.CompareTo(ConfirmPassword) != 0)
+                {
+                    yield return new ValidationResult(LabelHelpers.GetLabel("no_correspondence_password_error"),
+                        new[] { nameof(Password), nameof(ConfirmPassword) });
+                }
+            }
+        }
     }
 
     public class ResetPasswordViewModel : AdminViewModelBase
@@ -97,7 +140,6 @@ namespace SenRevue.Areas.Admin.Models.Account
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirmer le mot de passe")]
-        [Compare("Password", ErrorMessage = "Le nouveau mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

@@ -42,3 +42,7 @@ a.flag
 {
     padding: 5px !important;
 }
+.field-validation-error
+{
+    color: #b94a48;
+}
