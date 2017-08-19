@@ -159,9 +159,16 @@ namespace SenRevue.Areas.Admin.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    var idManager = new IdentityManager();
+                    if (!idManager.RoleExists(model.Role))
+                    {
+                        idManager.CreateRole(model.Role);
+                    }
+                    idManager.AddUserToRole(user.Id, model.Role);
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
