@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace SenRevue.Helpers
 {
-    public class GlobalHelpers
+    public class GlobalHelper
     {
         /// <summary>
         /// Verifie si un email est valide

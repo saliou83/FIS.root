@@ -69,7 +69,7 @@ namespace SenRevue.Areas.Admin.Models.Account
     {
         public RegisterViewModel()
         {
-            Roles = GlobalHelpers.EnumToSelectListItem<RoleEnum>();
+            Roles = GlobalHelper.EnumToSelectListItem<RoleEnum>();
         }
 
         [Display(Name = "Courrier électronique")]
@@ -93,7 +93,7 @@ namespace SenRevue.Areas.Admin.Models.Account
             {
                 yield return new ValidationResult(LabelHelpers.GetLabel("email_required_error"), new[] { nameof(Email) });
             }
-            else if(!GlobalHelpers.IsEmailValid(Email))
+            else if(!GlobalHelper.IsEmailValid(Email))
             {
                 yield return new ValidationResult(LabelHelpers.GetLabel("email_invalid_error"), new[] { nameof(Email) });
             }

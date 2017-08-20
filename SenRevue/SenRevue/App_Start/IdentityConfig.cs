@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using SenRevue.Areas.Admin.Models.Account;
+using SenRevue.Helpers;
 
 namespace SenRevue
 {
@@ -19,6 +20,7 @@ namespace SenRevue
         public Task SendAsync(IdentityMessage message)
         {
             // Indiquez votre service de messagerie ici pour envoyer un e-mail.
+            MailHelper.SendMail(message.Destination, null, message.Subject, message.Body);
             return Task.FromResult(0);
         }
     }
