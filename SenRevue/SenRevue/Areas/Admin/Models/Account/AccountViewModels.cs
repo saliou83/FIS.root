@@ -72,6 +72,11 @@ namespace SenRevue.Areas.Admin.Models.Account
             Roles = GlobalHelper.EnumToSelectListItem<RoleEnum>();
         }
 
+        /// <summary>
+        /// Message de confirmation de la création de comptes
+        /// </summary>
+        public string ConfirmationMessage { get; set; }
+
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
         
@@ -124,7 +129,7 @@ namespace SenRevue.Areas.Admin.Models.Account
             }
         }
     }
-
+    
     public class ResetPasswordViewModel : AdminViewModelBase
     {
         [Required]

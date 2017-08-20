@@ -1,10 +1,11 @@
-﻿@{
-    ViewBag.Title = "Confirmation de l'e-mail";
-}
+﻿@using SenRevue.Areas.Admin.Models.ViewModel
+@using SenRevue.Helpers;
+@model AdminViewModelBase
 
-<h2>@ViewBag.Title.</h2>
+<h2>@Html.Raw(Model.Title)</h2>
 <div>
     <p>
-        Merci d'avoir confirmé votre e-mail. Veuillez @Html.ActionLink("Cliquer ici pour vous connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        @Html.Raw(LabelHelpers.GetLabel("page_confirm_mail_message_1"))
+        @Html.ActionLink(LabelHelpers.GetLabel("page_confirm_mail_message_2"), "Login", "Account", routeValues: new { area = "Admin"}, htmlAttributes: new { id = "loginLink" })
     </p>
 </div>

@@ -17,7 +17,7 @@ namespace SenRevue.Tests.Helper
         public void SendMailOK()
         {
 
-            MailHelper.SendMail1();
+            //MailHelper.SendMail1();
             //bool result = MailHelper.SendMail("saliou.fall@senrevue.com", null, "test envoi mail", "test envoie mail");
             //Assert.IsTrue(result);
         }

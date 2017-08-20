@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SenRevue.Areas.Admin.Models.Account;
 using SenRevue.Helpers;
+using SenRevue.Areas.Admin.Models.ViewModel;
 
 namespace SenRevue.Areas.Admin.Controllers
 {
@@ -174,9 +175,14 @@ namespace SenRevue.Areas.Admin.Controllers
                     // Envoyer un message électronique avec ce lien
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
+                    await UserManager.SendEmailAsync(user.Id, LabelHelpers.GetLabel("page_confirm_mail_title"), string.Format(LabelHelpers.GetLabel("page_confirm_mail_content"), callbackUrl));
 
-                    return RedirectToAction("Index", "Home");
+                    model = new RegisterViewModel()
+                    {
+                        ConfirmationMessage = string.Format(LabelHelpers.GetLabel("confirm_user_created_message"), model.Email)
+                    };
+
+                    //return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }
@@ -191,12 +197,14 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
+            var model = new AdminViewModelBase();
+            model.Title = LabelHelpers.GetLabel("mail_confirm_mail_title");
             if (userId == null || code == null)
             {
                 return View("Error");
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+            return View(result.Succeeded ? "ConfirmEmail" : "Error", model);
         }
 
         //
