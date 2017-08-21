@@ -150,11 +150,26 @@ namespace SenRevue.Areas.Admin.Models.Account
         public string Code { get; set; }
     }
 
-    public class ForgotPasswordViewModel : AdminViewModelBase
+    public class ForgotPasswordViewModel : AdminViewModelBase, IValidatableObject
     {
-        [Required]
-        [EmailAddress]
         [Display(Name = "E-mail")]
         public string Email { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (string.IsNullOrEmpty(Email))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("email_required_error"), new[] { nameof(Email) });
+            }
+            else if (!GlobalHelper.IsEmailValid(Email))
+            {
+                yield return new ValidationResult(LabelHelpers.GetLabel("email_invalid_error"), new[] { nameof(Email) });
+            }
+        }
+    }
+
+    public class ConfirmEmailViewModel : AdminViewModelBase
+    {
+        public string ChangePasswordLink { get; set; }
     }
 }

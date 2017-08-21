@@ -1,11 +1,12 @@
-﻿@using SenRevue.Areas.Admin.Models.ViewModel
+﻿@using SenRevue.Areas.Admin.Models.Account
 @using SenRevue.Helpers;
-@model AdminViewModelBase
+@model ConfirmEmailViewModel
 
 <h2>@Html.Raw(Model.Title)</h2>
 <div>
     <p>
         @Html.Raw(LabelHelpers.GetLabel("page_confirm_mail_message_1"))
-        @Html.ActionLink(LabelHelpers.GetLabel("page_confirm_mail_message_2"), "Login", "Account", routeValues: new { area = "Admin"}, htmlAttributes: new { id = "loginLink" })
+        @*@Html.ActionLink(LabelHelpers.GetLabel("page_confirm_mail_message_2"), "ForgotPassword", "Account", routeValues: new { area = "Admin"}, htmlAttributes: new { id = "loginLink" })*@
+        <a href="@Model.ChangePasswordLink">@LabelHelpers.GetLabel("page_confirm_mail_message_2")</a>
     </p>
 </div>

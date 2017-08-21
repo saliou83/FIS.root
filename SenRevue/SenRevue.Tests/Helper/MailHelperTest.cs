@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SenRevue.Areas.Admin.Controllers;
 using SenRevue.Helpers;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,8 @@ namespace SenRevue.Tests.Helper
         [TestMethod]
         public void SendMailOK()
         {
-
+            AccountController controller = new AccountController();
+            //controller.DeleteUser("fallsaliou23@gmail.com");
             //MailHelper.SendMail1();
             //bool result = MailHelper.SendMail("saliou.fall@senrevue.com", null, "test envoi mail", "test envoie mail");
             //Assert.IsTrue(result);

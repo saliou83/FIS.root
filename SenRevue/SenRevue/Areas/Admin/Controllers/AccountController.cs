@@ -72,6 +72,8 @@ namespace SenRevue.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            //Supprimer un utilisateur
+            await DeleteUser("fallsaliou23@gmail.com");
             if (!ModelState.IsValid)
             {
                 model.Title = LabelHelpers.GetLabel("admin_login_title");
@@ -148,7 +150,6 @@ namespace SenRevue.Areas.Admin.Controllers
             model.Title = LabelHelpers.GetLabel("admin_register_title");
             return View(model);
         }
-
         //
         // POST: /Account/Register
         [HttpPost]
@@ -197,13 +198,18 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            var model = new AdminViewModelBase();
+            var model = new ConfirmEmailViewModel();
             model.Title = LabelHelpers.GetLabel("mail_confirm_mail_title");
             if (userId == null || code == null)
             {
                 return View("Error");
             }
+
             var result = await UserManager.ConfirmEmailAsync(userId, code);
+
+            string codeReInit = await UserManager.GenerateEmailConfirmationTokenAsync(userId);
+            model.ChangePasswordLink = Url.Action("ResetPassword", "Account", new { userId = userId, code = code }, protocol: Request.Url.Scheme);
+
             return View(result.Succeeded ? "ConfirmEmail" : "Error", model);
         }
 
@@ -212,7 +218,9 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
-            return View();
+            var model = new ForgotPasswordViewModel();
+            model.Title = LabelHelpers.GetLabel("forgot_password_title");
+            return View(model);
         }
 
         //
@@ -231,15 +239,16 @@ namespace SenRevue.Areas.Admin.Controllers
                     return View("ForgotPasswordConfirmation");
                 }
 
-                // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
+                //Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
                 // Envoyer un message électronique avec ce lien
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Réinitialiser le mot de passe", "Réinitialisez votre mot de passe en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Réinitialiser le mot de passe", "Réinitialisez votre mot de passe en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+            model.Title = LabelHelpers.GetLabel("forgot_password_title");
             return View(model);
         }
 
@@ -256,7 +265,9 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
-            return code == null ? View("Error") : View();
+            var model = new ResetPasswordViewModel();
+            model.Title = LabelHelpers.GetLabel("reset_password_title");
+            return code == null ? View("Error", model) : View(model);
         }
 
         //
@@ -266,6 +277,7 @@ namespace SenRevue.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
+            model.Title = LabelHelpers.GetLabel("reset_password_title");
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -282,7 +294,7 @@ namespace SenRevue.Areas.Admin.Controllers
                 return RedirectToAction("ResetPasswordConfirmation", "Account");
             }
             AddErrors(result);
-            return View();
+            return View(model);
         }
 
         //
@@ -472,6 +484,33 @@ namespace SenRevue.Areas.Admin.Controllers
                 return Redirect(returnUrl);
             }
             return RedirectToAction("Index", "Home");
+        }
+
+        /// <summary>
+        /// Supprimer un utilisateur
+        /// </summary>
+        /// <param name="mail"></param>
+        public async Task<bool> DeleteUser(string mail)
+        {
+            var user = UserManager.FindByEmail(mail);
+            var logins = user.Logins;
+            var rolesForUser = await UserManager.GetRolesAsync(user.Id);
+            foreach (var login in logins.ToList())
+            {
+                await UserManager.RemoveLoginAsync(login.UserId, new UserLoginInfo(login.LoginProvider, login.ProviderKey));
+            }
+
+            if (rolesForUser.Count() > 0)
+            {
+                foreach (var item in rolesForUser.ToList())
+                {
+                    // item should be the name of the role
+                    var result = await UserManager.RemoveFromRoleAsync(user.Id, item);
+                }
+            }
+
+            await UserManager.DeleteAsync(user);
+            return true;
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
