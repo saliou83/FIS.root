@@ -215,11 +215,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModel\AdminRubricsViewModel.cs" />
     <Compile Include="Areas\Admin\Controllers\ManageController.cs" />
     <Compile Include="Areas\Admin\Models\Account\AccountViewModels.cs" />
     <Compile Include="Areas\Admin\Models\Account\IdentityModels.cs" />
     <Compile Include="Areas\Admin\Models\Account\ManageViewModels.cs" />
     <Compile Include="Areas\Admin\Models\Account\RoleEnum.cs" />
+    <Compile Include="Areas\Admin\Models\ViewModel\AdminNewsViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\AdminHomeViewModel.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\AdminViewModelBase.cs" />
     <Compile Include="Areas\Admin\Models\ViewModel\LanguageViewModel.cs" />
@@ -271,6 +273,8 @@
     <Content Include="Areas\Admin\Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Areas\Admin\Views\Account\SendCode.cshtml" />
     <Content Include="Areas\Admin\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\News.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Rubrics.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

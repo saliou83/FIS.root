@@ -1,10 +1,11 @@
 ﻿@model SenRevue.Areas.Admin.Models.ViewModel.AdminViewModelBase
+@using SenRevue.Helpers;
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@Model.Title</title>
+    <title>@string.Format("{0}: {1}",LabelHelpers.GetLabel("admin_title"),Model.Title)</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -31,6 +32,38 @@
     </div>
 
     <div class="container body-content">
+        @if (User.Identity.IsAuthenticated)
+        {
+            string actionName = ViewContext.Controller.ValueProvider.GetValue("action").RawValue.ToString();
+
+            <div class="navbar navbar-inverse senrevue-menu">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="@(actionName == "Index"?"active":"")">
+                                @Html.ActionLink(LabelHelpers.GetLabel("home_label"), "Index", "Admin",
+                            routeValues: null, htmlAttributes: new { title = LabelHelpers.GetLabel("home_label") })
+                            </li>
+                            <li class="@(actionName == "News"?"active":"")">
+                                @Html.ActionLink(LabelHelpers.GetLabel("article_label"), "News", "Admin",
+                            routeValues: null, htmlAttributes: new { title = LabelHelpers.GetLabel("article_admin_title") })
+                            </li>
+                            <li class="@(actionName == "Rubrics"?"active":"")">
+                                @Html.ActionLink(LabelHelpers.GetLabel("rubrique_label"), "Rubrics", "Admin",
+                            routeValues: null, htmlAttributes: new { title = LabelHelpers.GetLabel("rubrique_admin_title") })
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
         @RenderBody()
         <hr />
         <footer>

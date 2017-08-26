@@ -13,6 +13,23 @@
     background-color: #3d7acc;
     border-color: #134094;
 }
+.senrevue-menu {
+    background-color: #3d7acc !important;
+    border-color: #3d7acc;
+    color: #FFFFFF !important;
+}
+.container.body-content .navbar-inverse.senrevue-menu .navbar-nav > li > a {
+    color: #FFFFFF !important;
+}
+.container.body-content .navbar-inverse.senrevue-menu .navbar-nav > .active > a,
+.container.body-content .navbar-inverse.senrevue-menu .navbar-nav > .active > a:hover{
+    color: #ffffff;
+    background-color: #134094;
+}
+.container.body-content .navbar-inverse.senrevue-menu .navbar-nav > .active > a:focus {
+    color: #fcf1f1;
+    background-color: #3280e9;
+}
 ul.senrevue > li > a {
     color: #FFFFFF !important;
 }
