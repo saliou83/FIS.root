@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SenRevue.Business.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,9 @@ namespace SenRevue.Areas.Admin.Models.ViewModel
     {
         public AdminRubricsViewModel()
         {
+            Rubrics = new List<CategoryModel>();
         }
+
+        public List<CategoryModel> Rubrics { get; set; }
     }
 }
