@@ -73,9 +73,14 @@ namespace SenRevue.Areas.Admin.Models.Account
         }
 
         /// <summary>
-        /// Message de confirmation de la création de comptes
+        /// Message de confirmation de la création de compte
         /// </summary>
         public string ConfirmationMessage { get; set; }
+
+        /// <summary>
+        /// Message d'erreur de la création de compte
+        /// </summary>
+        public string ErrorMessage { get; set; }
 
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }

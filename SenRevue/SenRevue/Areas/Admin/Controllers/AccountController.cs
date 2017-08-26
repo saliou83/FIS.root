@@ -73,7 +73,8 @@ namespace SenRevue.Areas.Admin.Controllers
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
             //Supprimer un utilisateur
-            await DeleteUser("fallsaliou23@gmail.com");
+            //await DeleteUser("fallsaliou23@gmail.com");
+            //await DeleteUser("admin@senrevue.com");
             if (!ModelState.IsValid)
             {
                 model.Title = LabelHelpers.GetLabel("admin_login_title");
@@ -93,7 +94,7 @@ namespace SenRevue.Areas.Admin.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Tentative de connexion non valide.");
+                    ModelState.AddModelError("", LabelHelpers.GetLabel("login_fail"));
                     return View(model);
             }
         }
@@ -185,7 +186,11 @@ namespace SenRevue.Areas.Admin.Controllers
 
                     //return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                else
+                {
+                    AddErrors(result);
+                    model.ErrorMessage = string.Join("<br />", result.Errors);
+                }
             }
             model.Title = LabelHelpers.GetLabel("admin_register_title");
 
@@ -207,8 +212,8 @@ namespace SenRevue.Areas.Admin.Controllers
 
             var result = await UserManager.ConfirmEmailAsync(userId, code);
 
-            string codeReInit = await UserManager.GenerateEmailConfirmationTokenAsync(userId);
-            model.ChangePasswordLink = Url.Action("ResetPassword", "Account", new { userId = userId, code = code }, protocol: Request.Url.Scheme);
+            string codeReInit = await UserManager.GeneratePasswordResetTokenAsync(userId);
+            model.ChangePasswordLink = Url.Action("ResetPassword", "Account", new { userId = userId, code = codeReInit }, protocol: Request.Url.Scheme);
 
             return View(result.Succeeded ? "ConfirmEmail" : "Error", model);
         }
@@ -302,7 +307,11 @@ namespace SenRevue.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
-            return View();
+            ResetPasswordViewModel model = new ResetPasswordViewModel()
+            {
+                Title = LabelHelpers.GetLabel("reset_password_title")
+            };
+            return View(model);
         }
 
         //
