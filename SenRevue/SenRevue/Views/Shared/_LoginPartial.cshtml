@@ -8,9 +8,19 @@
 
     <ul class="senrevue nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink(LabelHelpers.GetLabel("hello_label") +" "+ User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink(LabelHelpers.GetLabel("hello_label") +" "+ User.Identity.GetUserName() + "!", "Index", "Manage", 
+                    routeValues: null, htmlAttributes: new { title = LabelHelpers.GetLabel("manage_account_title") })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">@LabelHelpers.GetLabel("disconnect_label")</a></li>
+        @if (Roles.IsUserInRole(User.Identity.GetUserName(), "Admin"))
+        {
+            <li>
+                @Html.ActionLink(LabelHelpers.GetLabel("new_user_account"), "Register", "Account",
+                    routeValues: null, htmlAttributes: new { title = LabelHelpers.GetLabel("new_user_account_title") })
+            </li>
+        }
+        <li>
+            <a href="javascript:document.getElementById('logoutForm').submit()">@LabelHelpers.GetLabel("disconnect_label")</a>
+        </li>
     </ul>
     }
 }

@@ -144,7 +144,7 @@ namespace SenRevue.Areas.Admin.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [Authorize(Roles ="Admin")]
         public ActionResult Register()
         {
             var model = new RegisterViewModel();
