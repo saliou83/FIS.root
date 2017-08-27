@@ -10,9 +10,9 @@ namespace SenRevue.Areas.Admin.Models.ViewModel
     {
         public AdminNewsViewModel()
         {
-            Articles = new List<ArticleModel>();
+            Articles = new List<ArticleViewModel>();
         }
 
-        public List<ArticleModel> Articles { get; set; }
+        public List<ArticleViewModel> Articles { get; set; }
     }
 }

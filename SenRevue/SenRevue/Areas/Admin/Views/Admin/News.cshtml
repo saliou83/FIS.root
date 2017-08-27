@@ -1,4 +1,69 @@
 ﻿@model SenRevue.Areas.Admin.Models.ViewModel.AdminNewsViewModel
+@using SenRevue.Helpers;
 
 <h2>@Model.Title</h2>
 
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>Liste des articles</h1>
+        <div class="alert alert-info">
+            Ce tableau contient la liste des articles
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table id="NewsTable" class="display" cellspacing="0" width="100" style="text-align: center">
+            <thead>
+                <tr style="text-align: center">
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Date de création
+                    </th>
+                    <th>
+                        Source
+                    </th>
+                    <th>
+                        Statut
+                    </th>
+                    <th>
+                        Accueil
+                    </th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var defLang = "@Model.DefaultLang";
+
+        $("#NewsTable").DataTable({
+            language: {
+                "url": (defLang == "fr")? "/Scripts/DataTables/Lang/French.lang.json":
+                    ((defLang == "en") ? "/Scripts/DataTables/Lang/English.lang.json" : "/Scripts/DataTables/Lang/Spanish.lang.json")
+            },
+            "aLengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, '@LabelHelpers.GetLabel("commons_all")']],
+            "processing": true, // for show progress bar
+            "serverSide": true, // for process server side
+            "ajax": {
+                "url": '@Url.Action("LoadNewsData", "Admin", new { Area = "Admin", langCode = Model.DefaultLang })',
+                "type": "POST",
+                "datatype": "json"
+            },
+            "columns": [
+                    { "data": "Title", "name": "Title", "autoWidth": true },
+                    { "data": "CreationDate", "name": "CreationDate", "autoWidth": true },
+                    { "data": "Source", "name": "Source", "autoWidth": true },
+                    { "data": "IsActive", "name": "Statut", "autoWidth": true },
+                    { "data": "IsHome", "name": "Accueil", "autoWidth": true }
+            ]
+        });
+    });
+</script>

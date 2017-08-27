@@ -9,7 +9,15 @@ namespace SenRevue
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                      "~/Scripts/DataTables/jquery.dataTables.min.js",
+                      "~/Scripts/DataTables/dataTables.buttons.min.js",
+                      "~/Scripts/DataTables/buttons.flash.min.js",
+                      "~/Scripts/DataTables/jszip.min.js",
+                      "~/Scripts/DataTables/pdfmake.min.js",
+                      "~/Scripts/DataTables/vfs_fonts.js",
+                      "~/Scripts/DataTables/buttons.html5.min.js",
+                      "~/Scripts/DataTables/buttons.print.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,7 +33,9 @@ namespace SenRevue
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/site.css",
-                      "~/Content/bootstrap.css"));
+                      "~/Content/bootstrap.css",
+                      "~/Content/DataTables/css/jquery.dataTables.min.css",
+                      "~/Content/DataTables/css/buttons.dataTables.min.css"));
         }
     }
 }
