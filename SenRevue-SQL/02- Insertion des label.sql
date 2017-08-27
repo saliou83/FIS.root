@@ -489,3 +489,13 @@ IF NOT EXISTS(SELECT * FROM label WHERE lbl_code = 'economy_label')
 		VALUES ('economy_label' ,3,'Economía');
 	END
 GO
+IF NOT EXISTS(SELECT * FROM label WHERE lbl_code = 'commons_all')
+	BEGIN
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('commons_all' ,1,'Tout');
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('commons_all' ,2,'All');
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('commons_all' ,3,'Todo');
+	END
+GO
