@@ -95,7 +95,22 @@ namespace SenRevue.Areas.Admin.Controllers
 
                 throw ex;
             }
-            
+        }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult AddArticle()
+        {
+            try
+            {
+                var model = new ArticleViewModel();
+                return PartialView("~/Areas/Admin/Views/Admin/Partial/Modal/_addOrEditNews.cshtml", model);
+            }
+            catch (Exception ex)
+            {
+                LogManager.Current.Error("Echec de l'affichage de la popup d'ajout des articles", ex);
+                throw ex;
+            }
         }
 
         #endregion Articles

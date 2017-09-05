@@ -1,18 +1,20 @@
 ﻿@model SenRevue.Areas.Admin.Models.ViewModel.AdminNewsViewModel
 @using SenRevue.Helpers;
 
+@Scripts.Render("~/bundles/news")
 
 <h2>@Html.Raw(LabelHelpers.GetLabel("articles_list"))</h2>
 
+@Html.Hidden("addArticleLink", Url.Action("AddArticle", "Admin", new { area = "Admin" } ))
 <div class="clearfix"></div>
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div id="actionResult" class="col-md-8 col-md-offset-2">
         <br />
     </div>
 </div>
 <div class="row">
     <div class="col-md-3 col-md-offset-9">
-        <button id="btnAdd" type="button" class="btn btn-success pull-right" aria-label="Left Align" title='@LabelHelpers.GetLabel("add_new_article")'>
+        <button id="btnAddArticle" class="btn btn-success pull-right" aria-label="Left Align" title='@LabelHelpers.GetLabel("add_new_article")'>
             <span class="fa fa-plus" aria-hidden="true"></span>
             @LabelHelpers.GetLabel("commons_add")
         </button>
@@ -48,6 +50,9 @@
     </div>
 </div>
 
+<div id="modalWrapper">
+
+</div>
 
 <script type="text/javascript">
     $(document).ready(function () {

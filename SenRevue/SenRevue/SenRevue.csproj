@@ -588,6 +588,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Admin\news.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -631,6 +632,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\Admin\Partial\Modal\_addOrEditNews.cshtml" />
     <None Include="Scripts\DataTables\Lang\English.lang.json" />
     <None Include="Scripts\DataTables\Lang\French.lang.json" />
     <None Include="Scripts\DataTables\Lang\Spanish.lang.json" />

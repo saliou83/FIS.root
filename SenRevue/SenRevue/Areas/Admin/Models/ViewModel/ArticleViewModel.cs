@@ -15,6 +15,7 @@ namespace SenRevue.Areas.Admin.Models.ViewModel
             Comments = new List<CommentModel>();
             Categories = new List<CategoryModel>();
             Images = new List<ImageModel>();
+            IsAddForm = true;
         }
 
         public int Id { get; set; }
@@ -43,5 +44,7 @@ namespace SenRevue.Areas.Admin.Models.ViewModel
         public List<CategoryModel> Categories { get; set; }
         public List<ImageModel> Images { get; set; }
         public LanguageModel Language { get; set; }
+
+        public bool IsAddForm { get; set; }
     }
 }
