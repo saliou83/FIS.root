@@ -499,3 +499,13 @@ IF NOT EXISTS(SELECT * FROM label WHERE lbl_code = 'commons_all')
 		VALUES ('commons_all' ,3,'Todo');
 	END
 GO
+IF NOT EXISTS(SELECT * FROM label WHERE lbl_code = 'articles_list')
+	BEGIN
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('articles_list' ,1,'Liste des articles');
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('articles_list' ,2,'News list');
+		INSERT INTO [dbo].[label]([lbl_code],[lng_id],[lbl_libelle]) 
+		VALUES ('articles_list' ,3,'Lista de noticias');
+	END
+GO
