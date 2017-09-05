@@ -17,14 +17,14 @@
 
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-login">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 <img src="~/Content/Icons/icon_33.png" class="img-responsive img-rounded navbar-brand logo" />
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse navbar-login">
                 <ul class="nav navbar-nav"></ul>
 
                 @Html.Partial("~/Views/Shared/_LanguagePartial.cshtml", Model)
@@ -42,13 +42,13 @@
             <div class="navbar navbar-inverse senrevue-menu">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menu">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    <div class="navbar-collapse collapse">
+                    <div class="navbar-collapse collapse navbar-menu">
                         <ul class="nav navbar-nav">
                             <li class="@(actionName == "Index"?"active":"")">
                                 @Html.ActionLink(LabelHelpers.GetLabel("home_label"), "Index", "Admin",

@@ -63,3 +63,12 @@ a.flag
 {
     color: #b94a48;
 }
+/*****************DataTables***********************/
+div.dataTables_wrapper div.dataTables_filter input{
+    border-radius:3px;
+}
+.dataTables_wrapper{
+    border: 1px solid #111;
+    padding: 4px;
+    border-radius: 3px;
+}

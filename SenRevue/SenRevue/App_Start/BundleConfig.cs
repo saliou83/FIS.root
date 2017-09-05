@@ -12,6 +12,7 @@ namespace SenRevue
                         "~/Scripts/jquery-{version}.js",
                       "~/Scripts/DataTables/jquery.dataTables.min.js",
                       "~/Scripts/DataTables/dataTables.buttons.min.js",
+                      "~/Scripts/DataTables/dataTables.bootstrap.min.js",
                       "~/Scripts/DataTables/buttons.flash.min.js",
                       "~/Scripts/DataTables/jszip.min.js",
                       "~/Scripts/DataTables/pdfmake.min.js",
@@ -35,7 +36,8 @@ namespace SenRevue
                         "~/Content/site.css",
                       "~/Content/bootstrap.css",
                       "~/Content/DataTables/css/jquery.dataTables.min.css",
-                      "~/Content/DataTables/css/buttons.dataTables.min.css"));
+                      "~/Content/DataTables/css/buttons.dataTables.min.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.min.css"));
         }
     }
 }
