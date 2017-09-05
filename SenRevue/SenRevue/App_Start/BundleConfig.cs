@@ -34,7 +34,8 @@ namespace SenRevue
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/site.css",
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/font-awesome.min.css",
                       "~/Content/DataTables/css/jquery.dataTables.min.css",
                       "~/Content/DataTables/css/buttons.dataTables.min.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.min.css"));

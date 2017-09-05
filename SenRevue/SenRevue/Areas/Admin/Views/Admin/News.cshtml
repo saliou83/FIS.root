@@ -1,6 +1,7 @@
 ﻿@model SenRevue.Areas.Admin.Models.ViewModel.AdminNewsViewModel
 @using SenRevue.Helpers;
 
+
 <h2>@Html.Raw(LabelHelpers.GetLabel("articles_list"))</h2>
 
 <div class="clearfix"></div>
@@ -10,6 +11,14 @@
     </div>
 </div>
 <div class="row">
+    <div class="col-md-3 col-md-offset-9">
+        <button id="btnAdd" type="button" class="btn btn-success pull-right" aria-label="Left Align" title='@LabelHelpers.GetLabel("add_new_article")'>
+            <span class="fa fa-plus" aria-hidden="true"></span>
+            @LabelHelpers.GetLabel("commons_add")
+        </button>
+    </div>
+</div>
+<div class="row spacer">    
     <div class="col-md-12">
         <table id="NewsTable" class="display" cellspacing="0" width="100%" style="text-align: center">
             <thead>
@@ -28,6 +37,9 @@
                     </th>
                     <th width="10%">
                         Accueil
+                    </th>
+                    <th width="10%">
+
                     </th>
                 </tr>
             </thead>

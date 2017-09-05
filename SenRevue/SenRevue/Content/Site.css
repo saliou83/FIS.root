@@ -9,6 +9,8 @@
     padding-right: 5px;
     margin-top:80px;
 }
+.spacer {  margin-top: 10px; }
+
 .navbar-inverse.senrevue {
     background-color: #3d7acc;
     border-color: #134094;
