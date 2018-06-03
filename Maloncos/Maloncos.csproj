@@ -177,13 +177,43 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
+    <Content Include="App_Data\MaloncosDB.mdf" />
+    <Content Include="App_Data\MaloncosDB_log.ldf">
+      <DependentUpon>MaloncosDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\Admin\Views\Web.config" />
     <Content Include="Content\bootstrap\bootstrap-theme.css" />
     <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\cheveuxstyle.css" />
+    <Content Include="Content\cheveux\beaute.png" />
+    <Content Include="Content\cheveux\coffet.jpg" />
+    <Content Include="Content\cheveux\coffet1.jpg" />
+    <Content Include="Content\cheveux\coffret2.jpg" />
+    <Content Include="Content\cheveux\coffret3.jpg" />
+    <Content Include="Content\cheveux\coffret4.jpg" />
+    <Content Include="Content\cheveux\coffret5.jpg" />
+    <Content Include="Content\cheveux\coffret6.jpg" />
+    <Content Include="Content\cheveux\facebook.jpg" />
+    <Content Include="Content\cheveux\grande_fee.png" />
+    <Content Include="Content\cheveux\guidecrepu.jpg" />
+    <Content Include="Content\cheveux\hair.jpg" />
     <Content Include="Content\cheveux\herbes.jpg" />
+    <Content Include="Content\cheveux\IMG_1.jpg" />
+    <Content Include="Content\cheveux\IMG_2.jpg" />
+    <Content Include="Content\cheveux\IMG_3.jpg" />
+    <Content Include="Content\cheveux\IMG_6.jpg" />
+    <Content Include="Content\cheveux\instagram.jpg" />
+    <Content Include="Content\cheveux\pousse.jpg" />
+    <Content Include="Content\cheveux\print.jpg" />
+    <Content Include="Content\cheveux\promo.jpg" />
+    <Content Include="Content\cheveux\soins-novembre-2014.jpg" />
+    <Content Include="Content\cheveux\teint.jpg" />
     <Content Include="Content\images\fille.jpg" />
     <Content Include="Content\images\fille1.jpg" />
     <Content Include="Content\images\fille2.jpg" />
@@ -197,6 +227,8 @@
     <Content Include="Content\images\panier_logo.png" />
     <Content Include="Content\Maloncos.css" />
     <Content Include="Content\images\petit.jpg" />
+    <Content Include="Content\manteau1.jpg" />
+    <Content Include="Content\manteau2.jpg" />
     <Content Include="Content\photo\img1.jpg" />
     <Content Include="Content\photo\img10.jpg" />
     <Content Include="Content\photo\img11.jpg" />
@@ -210,7 +242,10 @@
     <Content Include="Content\photo\img7.jpg" />
     <Content Include="Content\photo\img8.jpg" />
     <Content Include="Content\photo\img9.jpg" />
+    <Content Include="Content\robe12.jpg" />
+    <Content Include="Content\robe13.jpg" />
     <Content Include="Content\Site1.css" />
+    <Content Include="Content\stylesimage.css" />
     <Content Include="Content\stylesimage1.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -253,6 +288,23 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\ui-lightness\images\animated-overlay.gif" />
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\ui-lightness\jquery-ui-1.10.4.custom.css" />
+    <Content Include="Content\ui-lightness\jquery-ui-1.10.4.custom.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\MaloncosDBModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -274,6 +326,7 @@
     <Content Include="Scripts\jquery-1.11.2.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <None Include="Properties\PublishProfiles\maloncos.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -324,6 +377,7 @@
     <Content Include="Views\Partial\_RightNavigationGaucheH.cshtml" />
     <Content Include="Views\Home\PousseCheveux.cshtml" />
     <Content Include="Views\Home\Guidecrepus.cshtml" />
+    <Content Include="Views\Home\Coiffure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
@@ -384,7 +438,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>

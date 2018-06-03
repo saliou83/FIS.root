@@ -146,7 +146,10 @@ namespace Maloncos.Controllers
         {
             return View();
         }
-
+        public ActionResult Coiffure()
+        {
+            return View();
+        }
         //
         // GET: /Home/Edit/5
 
