@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MaloncosDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Clients" />
+          </Key>
+          <Property Name="Id_Clients" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_Client" Type="nvarchar(max)" />
+          <Property Name="Prenom_Client" Type="nvarchar(max)" />
+          <Property Name="Adresse" Type="nvarchar(max)" />
+          <Property Name="Code_postal" Type="nvarchar(max)" />
+          <Property Name="Genre" Type="nvarchar(max)" />
+          <Property Name="Email_Client" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Commands">
+          <Key>
+            <PropertyRef Name="Id_Command" />
+          </Key>
+          <Property Name="Id_Command" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date_Command" Type="date" Nullable="false" />
+          <Property Name="Id_Clients" Type="int" Nullable="false" />
+          <Property Name="Montant" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Compte">
+          <Key>
+            <PropertyRef Name="Id_Compte" />
+          </Key>
+          <Property Name="Id_Compte" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Motdepasse" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Clients" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Couleur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Couleur" Type="nchar" MaxLength="10" />
+          <Property Name="Id_vetement" Type="int" />
+        </EntityType>
+        <EntityType Name="Ligne_Command">
+          <Key>
+            <PropertyRef Name="Id_Ligne_Command" />
+          </Key>
+          <Property Name="Id_Ligne_Command" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Command" Type="int" Nullable="false" />
+          <Property Name="Id_vetement" Type="int" Nullable="false" />
+          <Property Name="Montant" Type="float" Nullable="false" />
+          <Property Name="Nombre_Article" Type="int" Nullable="false" />
+          <Property Name="Adresse_livraison" Type="nvarchar(max)" />
+          <Property Name="Adresse_Facturation" Type="nvarchar(max)" />
+          <Property Name="Frais_Livraison" Type="float" />
+        </EntityType>
+        <EntityType Name="Produits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Categorie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="prix" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Soins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Type_produit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Libelle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prix_produit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vetements">
+          <Key>
+            <PropertyRef Name="Id_vetement" />
+          </Key>
+          <Property Name="Id_vetement" Type="int" Nullable="false" />
+          <Property Name="Type_vetement" Type="nvarchar(max)" />
+          <Property Name="Categorie" Type="nvarchar" MaxLength="50" />
+          <Property Name="Genre_vetement" Type="nvarchar(max)" />
+          <Property Name="Reference_vetement" Type="nvarchar" MaxLength="50" />
+          <Property Name="Libelle_vetement" Type="nvarchar(max)" />
+          <Property Name="Prix_vetement" Type="nvarchar(max)" />
+          <Property Name="Couleur" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Image1" Type="nvarchar(max)" />
+          <Property Name="Image2" Type="nvarchar(max)" />
+          <Property Name="Image3" Type="nvarchar(max)" />
+          <Property Name="Image4" Type="nvarchar(max)" />
+          <Property Name="Prix_unit" Type="int" />
+        </EntityType>
+        <EntityContainer Name="MaloncosDBModelStoreContainer">
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compte" EntityType="Self.Compte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Couleur" EntityType="Self.Couleur" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ligne_Command" EntityType="Self.Ligne_Command" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Produits" EntityType="Self.Produits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Soins" EntityType="Self.Soins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vetements" EntityType="Self.Vetements" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MaloncosDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id_Clients" />
+          </Key>
+          <Property Name="Id_Clients" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prenom_Client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Code_postal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email_Client" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Commands">
+          <Key>
+            <PropertyRef Name="Id_Command" />
+          </Key>
+          <Property Name="Id_Command" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_Command" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+          <Property Name="Montant" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Compte">
+          <Key>
+            <PropertyRef Name="Id_Compte" />
+          </Key>
+          <Property Name="Id_Compte" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Motdepasse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id_Clients" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Couleur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Couleur1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Id_vetement" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ligne_Command">
+          <Key>
+            <PropertyRef Name="Id_Ligne_Command" />
+          </Key>
+          <Property Name="Id_Ligne_Command" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Command" Type="Int32" Nullable="false" />
+          <Property Name="Id_vetement" Type="Int32" Nullable="false" />
+          <Property Name="Montant" Type="Double" Nullable="false" />
+          <Property Name="Nombre_Article" Type="Int32" Nullable="false" />
+          <Property Name="Adresse_livraison" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adresse_Facturation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Frais_Livraison" Type="Double" />
+        </EntityType>
+        <EntityType Name="Produits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Categorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prix" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Soins">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type_produit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prix_produit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vetements">
+          <Key>
+            <PropertyRef Name="Id_vetement" />
+          </Key>
+          <Property Name="Id_vetement" Type="Int32" Nullable="false" />
+          <Property Name="Type_vetement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Categorie" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Genre_vetement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reference_vetement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Libelle_vetement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prix_vetement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Couleur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prix_unit" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MaloncosDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Commands" EntityType="Self.Commands" />
+          <EntitySet Name="Compte" EntityType="Self.Compte" />
+          <EntitySet Name="Couleur" EntityType="Self.Couleur" />
+          <EntitySet Name="Ligne_Command" EntityType="Self.Ligne_Command" />
+          <EntitySet Name="Produits" EntityType="Self.Produits" />
+          <EntitySet Name="Soins" EntityType="Self.Soins" />
+          <EntitySet Name="Vetements" EntityType="Self.Vetements" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MaloncosDBModelStoreContainer" CdmEntityContainer="MaloncosDBEntities">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+                <ScalarProperty Name="Nom_Client" ColumnName="Nom_Client" />
+                <ScalarProperty Name="Prenom_Client" ColumnName="Prenom_Client" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Code_postal" ColumnName="Code_postal" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="Email_Client" ColumnName="Email_Client" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commands">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Commands">
+              <MappingFragment StoreEntitySet="Commands">
+                <ScalarProperty Name="Id_Command" ColumnName="Id_Command" />
+                <ScalarProperty Name="Date_Command" ColumnName="Date_Command" />
+                <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+                <ScalarProperty Name="Montant" ColumnName="Montant" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compte">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Compte">
+              <MappingFragment StoreEntitySet="Compte">
+                <ScalarProperty Name="Id_Compte" ColumnName="Id_Compte" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Motdepasse" ColumnName="Motdepasse" />
+                <ScalarProperty Name="Id_Clients" ColumnName="Id_Clients" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Couleur">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Couleur">
+              <MappingFragment StoreEntitySet="Couleur">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Couleur1" ColumnName="Couleur" />
+                <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ligne_Command">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Ligne_Command">
+              <MappingFragment StoreEntitySet="Ligne_Command">
+                <ScalarProperty Name="Id_Ligne_Command" ColumnName="Id_Ligne_Command" />
+                <ScalarProperty Name="Id_Command" ColumnName="Id_Command" />
+                <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+                <ScalarProperty Name="Montant" ColumnName="Montant" />
+                <ScalarProperty Name="Nombre_Article" ColumnName="Nombre_Article" />
+                <ScalarProperty Name="Adresse_livraison" ColumnName="Adresse_livraison" />
+                <ScalarProperty Name="Adresse_Facturation" ColumnName="Adresse_Facturation" />
+                <ScalarProperty Name="Frais_Livraison" ColumnName="Frais_Livraison" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Produits">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Produits">
+              <MappingFragment StoreEntitySet="Produits">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Soins">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Soins">
+              <MappingFragment StoreEntitySet="Soins">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type_produit" ColumnName="Type_produit" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Prix_produit" ColumnName="Prix_produit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vetements">
+            <EntityTypeMapping TypeName="MaloncosDBModel.Vetements">
+              <MappingFragment StoreEntitySet="Vetements">
+                <ScalarProperty Name="Id_vetement" ColumnName="Id_vetement" />
+                <ScalarProperty Name="Type_vetement" ColumnName="Type_vetement" />
+                <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+                <ScalarProperty Name="Genre_vetement" ColumnName="Genre_vetement" />
+                <ScalarProperty Name="Reference_vetement" ColumnName="Reference_vetement" />
+                <ScalarProperty Name="Libelle_vetement" ColumnName="Libelle_vetement" />
+                <ScalarProperty Name="Prix_vetement" ColumnName="Prix_vetement" />
+                <ScalarProperty Name="Couleur" ColumnName="Couleur" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Image4" ColumnName="Image4" />
+                <ScalarProperty Name="Prix_unit" ColumnName="Prix_unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
