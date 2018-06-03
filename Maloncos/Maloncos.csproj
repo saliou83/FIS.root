@@ -129,51 +129,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Clients.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ClientsModel.cs" />
-    <Compile Include="Models\Commands.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Compte.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Couleur.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Enum\TypeProduitEnum.cs" />
-    <Compile Include="Models\Ligne_Command.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MaloncosDBModels.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MaloncosDBModels.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MaloncosDBModels.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MaloncosDBModels.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MaloncosDBModels.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\PanierModel.cs" />
     <Compile Include="Models\ProduitModel.cs" />
     <Compile Include="Models\ProduitPanierModel.cs" />
-    <Compile Include="Models\Produits.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Soins.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\VetementModel.cs" />
-    <Compile Include="Models\Vetements.cs">
-      <DependentUpon>MaloncosDBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -306,16 +267,6 @@
     <Content Include="Content\ui-lightness\jquery-ui-1.10.4.custom.css" />
     <Content Include="Content\ui-lightness\jquery-ui-1.10.4.custom.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\MaloncosDBModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MaloncosDBModels.Context.cs</LastGenOutput>
-      <DependentUpon>MaloncosDBModels.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\MaloncosDBModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MaloncosDBModels.cs</LastGenOutput>
-      <DependentUpon>MaloncosDBModels.edmx</DependentUpon>
-    </Content>
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Release Notes - Microsoft.Web.Helpers.txt" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
@@ -426,10 +377,6 @@
     <Content Include="Views\Shared\_LayoutWithLeftH.cshtml" />
     <Content Include="Views\Home\DetailsVetementEnfant.cshtml" />
     <Content Include="Views\Home\ProduitVeste.cshtml" />
-    <EntityDeploy Include="Models\MaloncosDBModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MaloncosDBModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
